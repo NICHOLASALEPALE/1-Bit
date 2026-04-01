@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c4jp2dif7v31c"]
+
+[node name="Label" type="Label" unique_id=801802395]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "May: (points)"

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://60limshg4upk"]
+
+[ext_resource type="Script" uid="uid://ckawl1lcpngxh" path="res://Scripts/game_manager.gd" id="1_b2bpf"]
+[ext_resource type="PackedScene" uid="uid://chy47q62dxxb2" path="res://Scenes/May.tscn" id="1_iukft"]
+[ext_resource type="Texture2D" uid="uid://03lcjaqogor4" path="res://Assets/background_test.png" id="2_gl6un"]
+[ext_resource type="PackedScene" uid="uid://bw0q3y2l3tljc" path="res://Scenes/Key.tscn" id="3_j5yw3"]
+[ext_resource type="AudioStream" uid="uid://cg5tg52agb6x" path="res://Music/Idontknorbackground.mp3" id="4_kldst"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cg2ps"]
+size = Vector2(114.799995, 3.299994)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl6un"]
+size = Vector2(106, 585)
+
+[node name="Game" type="Node2D" unique_id=1181378834]
+
+[node name="Game Manager" type="Node2D" parent="." unique_id=1203056498]
+unique_name_in_owner = true
+script = ExtResource("1_b2bpf")
+
+[node name="score label" type="Label" parent="Game Manager" unique_id=1054359302]
+offset_left = 543.0
+offset_top = 91.0
+offset_right = 1037.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 50
+text = "truth nuke incoming"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1069616365]
+position = Vector2(576, 324)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=696093976]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=892657997]
+position = Vector2(571, 677.5)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_cg2ps")
+
+[node name="BackgroundTest" type="Sprite2D" parent="." unique_id=1669208369]
+z_index = -5
+position = Vector2(573, 326)
+texture = ExtResource("2_gl6un")
+
+[node name="CharacterBody2D" parent="." unique_id=1114735077 instance=ExtResource("1_iukft")]
+position = Vector2(583, 289)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=324424073]
+position = Vector2(-283, 296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=187327235]
+position = Vector2(305, 69)
+shape = SubResource("RectangleShape2D_gl6un")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1305904378]
+position = Vector2(-283, 296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=507862158]
+position = Vector2(1407, 71)
+shape = SubResource("RectangleShape2D_gl6un")
+
+[node name="Area2D" parent="." unique_id=2073766779 instance=ExtResource("3_j5yw3")]
+z_index = -2
+position = Vector2(320, 489)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1654358316]
+stream = ExtResource("4_kldst")
+autoplay = true
