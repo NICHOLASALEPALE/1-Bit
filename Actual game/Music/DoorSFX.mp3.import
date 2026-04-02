@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3q6ojx4qtp72"
+path="res://.godot/imported/DoorSFX.mp3-1ad17277633ce07447534aaee3e01efc.mp3str"
+
+[deps]
+
+source_file="res://Actual game/Music/DoorSFX.mp3"
+dest_files=["res://.godot/imported/DoorSFX.mp3-1ad17277633ce07447534aaee3e01efc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

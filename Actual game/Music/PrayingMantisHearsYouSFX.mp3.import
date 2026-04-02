@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csf6x2huk7f7x"
+path="res://.godot/imported/PrayingMantisHearsYouSFX.mp3-385973e5ba6a60ee25a56ffadf312770.mp3str"
+
+[deps]
+
+source_file="res://Actual game/Music/PrayingMantisHearsYouSFX.mp3"
+dest_files=["res://.godot/imported/PrayingMantisHearsYouSFX.mp3-385973e5ba6a60ee25a56ffadf312770.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

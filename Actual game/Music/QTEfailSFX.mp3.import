@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlipt26lbwgxm"
+path="res://.godot/imported/QTEfailSFX.mp3-2f8501f5b32bf067c30fb7f7f15405fc.mp3str"
+
+[deps]
+
+source_file="res://Actual game/Music/QTEfailSFX.mp3"
+dest_files=["res://.godot/imported/QTEfailSFX.mp3-2f8501f5b32bf067c30fb7f7f15405fc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
