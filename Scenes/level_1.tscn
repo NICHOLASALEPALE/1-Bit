@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bawhfy21mhrno"]
+
+[ext_resource type="Texture2D" path="res://Assets/background_test_2.png" id="1_vk57k"]
+[ext_resource type="Texture2D" uid="uid://b3of2cn8djpsm" path="res://Assets/icon.svg" id="2_8ffim"]
+[ext_resource type="PackedScene" uid="uid://cpkyt4utdnu3g" path="res://Scenes/door.tscn" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://chy47q62dxxb2" path="res://Scenes/May.tscn" id="4_7p6j4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ffim"]
+size = Vector2(1109, 27)
+
+[node name="Level 1" type="Node2D" unique_id=770995815]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1478507709]
+position = Vector2(574, 323)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168715667]
+position = Vector2(577, 334)
+scale = Vector2(2, 1)
+texture = ExtResource("1_vk57k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1110446763]
+position = Vector2(554, 595)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1331001717]
+position = Vector2(24.5, 9.5)
+shape = SubResource("RectangleShape2D_8ffim")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1246842063]
+position = Vector2(943, 445)
+texture = ExtResource("2_8ffim")
+
+[node name="Door" type="Node" parent="." unique_id=1698389790]
+
+[node name="door" parent="Door" unique_id=880171296 instance=ExtResource("3_xfk5q")]
+destination_level_tag = "game"
+destination_door_tag = "W"
+spawn_direction = "Left"
+
+[node name="CollisionShape2D" parent="Door/door" index="0" unique_id=290985538]
+position = Vector2(98.1, 29.533335)
+
+[node name="Spawn" parent="Door/door" index="1" unique_id=1175240907]
+position = Vector2(30.2, 28.800001)
+
+[node name="CharacterBody2D" parent="Door" unique_id=1114735077 instance=ExtResource("4_7p6j4")]
+position = Vector2(303, 430)
+
+[editable path="Door/door"]

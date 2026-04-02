@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name May
+
 @onready var game_manager: Node2D = %"Game Manager"
 
 const SPEED = 300.0

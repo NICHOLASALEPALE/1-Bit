@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://03lcjaqogor4" path="res://Assets/background_test.png" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://bw0q3y2l3tljc" path="res://Scenes/Key.tscn" id="3_j5yw3"]
 [ext_resource type="AudioStream" uid="uid://cg5tg52agb6x" path="res://Music/Idontknorbackground.mp3" id="4_kldst"]
+[ext_resource type="PackedScene" uid="uid://cpkyt4utdnu3g" path="res://Scenes/door.tscn" id="6_7lihs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cg2ps"]
 size = Vector2(114.799995, 3.299994)
@@ -65,3 +66,19 @@ position = Vector2(320, 489)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1654358316]
 stream = ExtResource("4_kldst")
 autoplay = true
+
+[node name="Node" type="Node" parent="." unique_id=2044970947]
+
+[node name="door_E" parent="Node" unique_id=880171296 instance=ExtResource("6_7lihs")]
+position = Vector2(868, 477)
+destination_level_tag = "level_1"
+destination_door_tag = "E"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="Node/door_E" index="0" unique_id=290985538]
+position = Vector2(2.3, 1.9333334)
+
+[node name="Spawn" parent="Node/door_E" index="1" unique_id=1175240907]
+position = Vector2(-20, 0.86666673)
+
+[editable path="Node/door_E"]
