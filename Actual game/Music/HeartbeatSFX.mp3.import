@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkgoud543o3x5"
+path="res://.godot/imported/HeartbeatSFX.mp3-aa2043c9f8534c76a7b38d2d2ac028ce.mp3str"
+
+[deps]
+
+source_file="res://Actual game/Music/HeartbeatSFX.mp3"
+dest_files=["res://.godot/imported/HeartbeatSFX.mp3-aa2043c9f8534c76a7b38d2d2ac028ce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

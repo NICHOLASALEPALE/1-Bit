@@ -9,7 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 	if May_is_attacked == true:
 		print("yep")
-		get_tree().change_scene_to_file("res://Scenes/lose_screen.tscn")
+		get_tree().change_scene_to_file("res://Testing Scenes/Scenes/lose_screen.tscn")
 
 
 func _on_body_exited(body: Node2D) -> void:

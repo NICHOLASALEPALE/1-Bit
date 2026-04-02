@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ckawl1lcpngxh" path="res://Testing Scenes/Scripts/game_manager.gd" id="1_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://chy47q62dxxb2" path="res://Testing Scenes/Scenes/May.tscn" id="1_iukft"]
+[ext_resource type="Script" uid="uid://clq2ditm6xr4i" path="res://Testing Scenes/Scripts/game.gd" id="1_nytag"]
 [ext_resource type="Texture2D" uid="uid://03lcjaqogor4" path="res://Testing Scenes/Assets/background_test.png" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://bw0q3y2l3tljc" path="res://Testing Scenes/Scenes/Key.tscn" id="3_j5yw3"]
-[ext_resource type="AudioStream" uid="uid://cg5tg52agb6x" path="res://Testing Scenes/Music/Idontknorbackground.mp3" id="4_kldst"]
+[ext_resource type="AudioStream" uid="uid://cg5tg52agb6x" path="res://Actual game/Music/Idontknorbackground.mp3" id="4_kldst"]
 [ext_resource type="Script" uid="uid://h2n0r26vgs1e" path="res://Testing Scenes/Scripts/door1.gd" id="6_7lihs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cg2ps"]
@@ -17,6 +18,7 @@ size = Vector2(106, 585)
 size = Vector2(218, 249.5)
 
 [node name="Game" type="Node2D" unique_id=1181378834]
+script = ExtResource("1_nytag")
 
 [node name="Game Manager" type="Node2D" parent="." unique_id=1203056498]
 unique_name_in_owner = true

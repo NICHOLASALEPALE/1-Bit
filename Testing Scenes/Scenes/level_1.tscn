@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bawhfy21mhrno"]
 
-[ext_resource type="Texture2D" uid="uid://wo60vkx4lnr1" path="res://Testing Scenes/Assets/room_e.jpeg" id="1_evi0p"]
+[ext_resource type="Texture2D" uid="uid://wo60vkx4lnr1" path="res://Actual game/Assets/room_e.jpeg" id="1_evi0p"]
+[ext_resource type="Script" uid="uid://ckf3nnihqegap" path="res://Testing Scenes/Scripts/level_1.gd" id="1_ktmm4"]
 [ext_resource type="Texture2D" uid="uid://b3of2cn8djpsm" path="res://Testing Scenes/Assets/icon.svg" id="2_8ffim"]
 [ext_resource type="Script" uid="uid://d3jeje3qb7v3h" path="res://Testing Scenes/Scripts/door_2.gd" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://chy47q62dxxb2" path="res://Testing Scenes/Scenes/May.tscn" id="4_7p6j4"]
-[ext_resource type="AudioStream" uid="uid://clkhyevdibb3o" path="res://Testing Scenes/Music/I fw Candy apples.mp3" id="4_6444e"]
+[ext_resource type="AudioStream" uid="uid://clkhyevdibb3o" path="res://Actual game/Music/I fw Candy apples.mp3" id="4_6444e"]
 [ext_resource type="PackedScene" uid="uid://brga3as5wbngk" path="res://Testing Scenes/Scenes/monster.tscn" id="5_6444e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ffim"]
@@ -14,6 +15,7 @@ size = Vector2(1109, 27)
 size = Vector2(127, 128)
 
 [node name="Level 1" type="Node2D" unique_id=770995815]
+script = ExtResource("1_ktmm4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1036413114]
 z_index = -3

@@ -18,6 +18,8 @@ func _on_body_exited(body: Node2D) -> void:
 		
 		
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept") and May_Is_In == true:
+	if Input.is_action_just_pressed("ui_accept") and May_Is_In and GameManager.death == false:
 		GameManager.add_turn()
-		get_tree().change_scene_to_file(Game)
+
+		if GameManager.death == false:
+			get_tree().change_scene_to_file(Game)
