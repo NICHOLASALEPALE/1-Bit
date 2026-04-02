@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bfbypudjo37ah"]
+
+[node name="Lose Screen" type="Node2D" unique_id=117319930]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1267448488]
+position = Vector2(577, 324)
+
+[node name="Label" type="Label" parent="." unique_id=1268795273]
+offset_left = 320.0
+offset_top = 158.0
+offset_right = 822.0
+offset_bottom = 432.0
+theme_override_font_sizes/font_size = 50
+text = "Deaded"

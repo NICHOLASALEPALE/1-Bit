@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bawhfy21mhrno"]
+
+[ext_resource type="Texture2D" uid="uid://b3of2cn8djpsm" path="res://Assets/icon.svg" id="2_8ffim"]
+[ext_resource type="Script" uid="uid://d3jeje3qb7v3h" path="res://Scripts/door_2.gd" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://chy47q62dxxb2" path="res://Scenes/May.tscn" id="4_7p6j4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ffim"]
+size = Vector2(1109, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfk5q"]
+size = Vector2(127, 128)
+
+[node name="Level 1" type="Node2D" unique_id=770995815]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1478507709]
+position = Vector2(574, 323)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168715667]
+position = Vector2(577, 334)
+scale = Vector2(2, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1110446763]
+position = Vector2(554, 595)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1331001717]
+position = Vector2(24.5, 9.5)
+shape = SubResource("RectangleShape2D_8ffim")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1246842063]
+position = Vector2(943, 445)
+texture = ExtResource("2_8ffim")
+
+[node name="CharacterBody2D" parent="." unique_id=1114735077 instance=ExtResource("4_7p6j4")]
+position = Vector2(303, 430)
+
+[node name="door2" type="Area2D" parent="." unique_id=1249299074]
+position = Vector2(932, 442)
+script = ExtResource("3_xfk5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door2" unique_id=579558941]
+position = Vector2(12.5, 3)
+shape = SubResource("RectangleShape2D_xfk5q")
+
+[connection signal="body_entered" from="door2" to="door2" method="_on_body_entered"]
+[connection signal="body_exited" from="door2" to="door2" method="_on_body_exited"]

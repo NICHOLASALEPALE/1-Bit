@@ -5,12 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://03lcjaqogor4" path="res://Assets/background_test.png" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://bw0q3y2l3tljc" path="res://Scenes/Key.tscn" id="3_j5yw3"]
 [ext_resource type="AudioStream" uid="uid://cg5tg52agb6x" path="res://Music/Idontknorbackground.mp3" id="4_kldst"]
+[ext_resource type="Script" uid="uid://h2n0r26vgs1e" path="res://Scripts/door1.gd" id="6_7lihs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cg2ps"]
 size = Vector2(114.799995, 3.299994)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl6un"]
 size = Vector2(106, 585)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2bpf"]
+size = Vector2(218, 249.5)
 
 [node name="Game" type="Node2D" unique_id=1181378834]
 
@@ -65,3 +69,15 @@ position = Vector2(320, 489)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1654358316]
 stream = ExtResource("4_kldst")
 autoplay = true
+
+[node name="Door1" type="Area2D" parent="." unique_id=601436234 groups=["May"]]
+position = Vector2(904, 488)
+script = ExtResource("6_7lihs")
+level_1 = "uid://bawhfy21mhrno"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door1" unique_id=390797196]
+position = Vector2(2, 4)
+shape = SubResource("RectangleShape2D_b2bpf")
+
+[connection signal="body_entered" from="Door1" to="Door1" method="_on_body_entered"]
+[connection signal="body_exited" from="Door1" to="Door1" method="_on_body_exited"]

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name May
+
 @onready var game_manager: Node2D = %"Game Manager"
 
 const SPEED = 300.0
@@ -12,8 +14,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
 	if Input.is_action_pressed("ui_cancel"):
 		$AnimatedSprite2D.speed_scale = 10 # 50% faster
 		game_manager.add_point()

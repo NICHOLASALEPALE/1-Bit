@@ -10,10 +10,19 @@ config_version=5
 
 [application]
 
-config/name="1-Bit"
+config/name="test_3"
 run/main_scene="uid://60limshg4upk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+NavigationManager="*uid://bw8yklqtgggfr"
+GameManager="*uid://ckawl1lcpngxh"
+
+[global_group]
+
+May=""
 
 [input]
 
@@ -38,4 +47,5 @@ ui_cancel={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
