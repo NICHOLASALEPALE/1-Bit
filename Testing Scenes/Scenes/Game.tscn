@@ -81,5 +81,8 @@ level_1 = "uid://bawhfy21mhrno"
 position = Vector2(2, 4)
 shape = SubResource("RectangleShape2D_b2bpf")
 
+[node name="MonsterSpawn" type="Marker2D" parent="." unique_id=10054157]
+position = Vector2(165, 500)
+
 [connection signal="body_entered" from="Door1" to="Door1" method="_on_body_entered"]
 [connection signal="body_exited" from="Door1" to="Door1" method="_on_body_exited"]
