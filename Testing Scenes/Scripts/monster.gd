@@ -1,19 +1,17 @@
-extends Area2D
+extends CharacterBody2D
 
-var May_is_attacked:bool
+@export var speed: float = 400.0
 
+var player: Node2D = null
+var chasing: bool = false
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("May"):
-		May_is_attacked = true
-		
-	if May_is_attacked == true:
-		print("yep")
-		get_tree().change_scene_to_file("res://Testing Scenes/Scenes/lose_screen.tscn")
+var May_Is_Seen:bool
 
-
-func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("May"):
-		May_is_attacked == false
-		
-		
+func _physics_process(delta: float) -> void:
+	if chasing and player != null:
+		var direction = (player.global_position - global_position).normalized()
+		velocity = direction * speed
+	else:
+		velocity = Vector2.ZERO
+	
+	move_and_slide()

@@ -36,23 +36,23 @@ func add_turn(amount: int = 1) -> void:
 	turns += amount
 	enemy_progress += amount
 
-	print("----- NEW TURN -----")
-	print("Turns: ", turns)
-	print("Player Room: ", player_current_room)
-	print("Enemy Room BEFORE move: ", enemy_current_room)
-	print("Enemy Progress BEFORE move: ", enemy_progress)
+	#print("----- NEW TURN -----")
+	#print("Turns: ", turns)
+	#print("Player Room: ", player_current_room)
+	#print("Enemy Room BEFORE move: ", enemy_current_room)
+	#print("Enemy Progress BEFORE move: ", enemy_progress)
 
 	update_enemy_position()
 
-	print("Enemy Room AFTER move: ", enemy_current_room)
-	print("Enemy Progress AFTER move: ", enemy_progress)
+	#print("Enemy Room AFTER move: ", enemy_current_room)
+	#print("Enemy Progress AFTER move: ", enemy_progress)
 
 	if enemy_is_in_player_room():
 		print("Enemy has arrived in the player's room!")
-		death = true
-		get_tree().change_scene_to_file("res://Testing Scenes/Scenes/lose_screen.tscn")
+		#death = true
+		#get_tree().change_scene_to_file("res://Testing Scenes/Scenes/lose_screen.tscn")
 
-	print("--------------------")
+	#print("--------------------")
 
 func update_enemy_position() -> void:
 	var enemy_index = room_order.find(enemy_current_room)

@@ -58,7 +58,7 @@ stream = ExtResource("4_6444e")
 autoplay = true
 
 [node name="Area2D" parent="." unique_id=1596225979 instance=ExtResource("5_6444e")]
-position = Vector2(207, 457)
+position = Vector2(73, 451)
 
 [connection signal="body_entered" from="door2" to="door2" method="_on_body_entered"]
 [connection signal="body_exited" from="door2" to="door2" method="_on_body_exited"]

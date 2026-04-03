@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://brga3as5wbngk"]
 
 [ext_resource type="Texture2D" uid="uid://dmkdcm0fjmwb2" path="res://Testing Scenes/Assets/April/attack/t01578.png" id="1_dfc53"]
-[ext_resource type="Script" uid="uid://degihtf15jcsf" path="res://Testing Scenes/Scripts/monster.gd" id="1_g0mdy"]
+[ext_resource type="Script" uid="uid://nbihugh3lqta" path="res://Testing Scenes/Scripts/monster.gd" id="1_g0mdy"]
+[ext_resource type="Script" uid="uid://fxp4n55d1552" path="res://Testing Scenes/Scripts/death.gd" id="2_7d6kb"]
 [ext_resource type="Texture2D" uid="uid://dhrmhpv457bfa" path="res://Testing Scenes/Assets/April/attack/t01582.png" id="2_g0mdy"]
 [ext_resource type="Texture2D" uid="uid://bfwgftpqjirk6" path="res://Testing Scenes/Assets/April/attack/t01585.png" id="3_ppmea"]
 [ext_resource type="Texture2D" uid="uid://b8qaa2ihma8yt" path="res://Testing Scenes/Assets/April/attack/t01588.png" id="4_c2122"]
@@ -13,9 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://bhyno60xll8bc" path="res://Testing Scenes/Assets/April/idle/t01641.png" id="10_v4b24"]
 [ext_resource type="Texture2D" uid="uid://cmqrp3dby584h" path="res://Testing Scenes/Assets/April/idle/t01642.png" id="11_0ukfy"]
 [ext_resource type="Texture2D" uid="uid://boqqpla3t8kf8" path="res://Testing Scenes/Assets/April/idle/t01643.png" id="12_y32po"]
+[ext_resource type="Script" uid="uid://d2y40v5ci1qp0" path="res://Testing Scenes/Scripts/vision.gd" id="14_7d6kb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfc53"]
-size = Vector2(91, 174)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7d6kb"]
+size = Vector2(25, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k3d7l"]
 animations = [{
@@ -66,12 +68,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Area2D" type="Area2D" unique_id=1596225979]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfc53"]
+size = Vector2(91, 174)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwf77"]
+radius = 35.0
+height = 520.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=874148842]
 script = ExtResource("1_g0mdy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=411977490]
-position = Vector2(2.5, 10)
-shape = SubResource("RectangleShape2D_dfc53")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1917459497]
+position = Vector2(3.5, 10)
+shape = SubResource("RectangleShape2D_7d6kb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1070583459]
 sprite_frames = SubResource("SpriteFrames_k3d7l")
@@ -80,5 +89,21 @@ autoplay = "Idle"
 speed_scale = 1.5
 flip_h = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="death" type="Area2D" parent="." unique_id=1419911242]
+script = ExtResource("2_7d6kb")
+
+[node name="death cls" type="CollisionShape2D" parent="death" unique_id=411977490]
+position = Vector2(2.5, 10)
+shape = SubResource("RectangleShape2D_dfc53")
+
+[node name="vision" type="Area2D" parent="." unique_id=2102204242]
+script = ExtResource("14_7d6kb")
+
+[node name="vision cls" type="CollisionShape2D" parent="vision" unique_id=2019382834]
+position = Vector2(236, -48)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pwf77")
+
+[connection signal="body_entered" from="death" to="death" method="_on_body_entered"]
+[connection signal="body_entered" from="vision" to="vision" method="_on_body_entered"]
+[connection signal="body_exited" from="vision" to="vision" method="_on_body_exited"]
