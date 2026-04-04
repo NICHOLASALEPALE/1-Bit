@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://yb1elxx85suc"]
+
+[ext_resource type="Script" uid="uid://bt0spmd64u5j5" path="res://node_2d.gd" id="1_tolsf"]
+
+[node name="Node2D" type="Node2D" unique_id=430740215]
+script = ExtResource("1_tolsf")
+
+[node name="Button_manager" type="Control" parent="." unique_id=932195166]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Button_manager" unique_id=180602112]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.062000003
+anchor_top = -2.4750001
+anchor_right = -0.062000003
+anchor_bottom = -2.4750001
+offset_left = -379.52
+offset_top = -127.99999
+offset_right = 379.48
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 100
+text = "Start Game"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=690011818]
+position = Vector2(13, 3)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1776493077]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Button_manager/Start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
