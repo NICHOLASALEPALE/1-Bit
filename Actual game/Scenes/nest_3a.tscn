@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://caoqn1f65ojjo"]
+
+[ext_resource type="Texture2D" uid="uid://cy3m04xgb3snc" path="res://Actual game/Assets/nestroombg.png" id="1_s036n"]
+[ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="2_mdcy5"]
+[ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_qinog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdcy5"]
+atlas = ExtResource("1_s036n")
+region = Rect2(0, 0, 320, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qinog"]
+atlas = ExtResource("1_s036n")
+region = Rect2(320, 0, 320, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqo6s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdcy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qinog")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s036n"]
+size = Vector2(1443, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdcy5"]
+size = Vector2(82, 248.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqo6s"]
+size = Vector2(87, 186)
+
+[node name="nest_3a" type="Node2D" unique_id=7117616]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1001561013]
+position = Vector2(480, 216)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_qqo6s")
+autoplay = "default"
+
+[node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("2_mdcy5")]
+position = Vector2(555, 213)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=911545791]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=20942072]
+position = Vector2(716.5, 418.5)
+shape = SubResource("RectangleShape2D_s036n")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=602165640]
+position = Vector2(-344, 556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=958206154]
+position = Vector2(1371, -303)
+shape = SubResource("RectangleShape2D_mdcy5")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1483674454]
+position = Vector2(-283, 296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1330185179]
+position = Vector2(222, -36)
+shape = SubResource("RectangleShape2D_mdcy5")
+
+[node name="door_nest3a_hall3" type="Area2D" parent="." unique_id=1271201378 groups=["Door"]]
+z_index = 4
+position = Vector2(85, 259)
+script = ExtResource("3_qinog")
+Scene = "uid://w76aqeliv6m0"
+Door_Name = "door_2_E"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_nest3a_hall3" unique_id=1772681936]
+z_index = 4
+position = Vector2(109, -2)
+shape = SubResource("RectangleShape2D_qqo6s")
+
+[connection signal="body_entered" from="door_nest3a_hall3" to="door_nest3a_hall3" method="_on_body_entered"]
+[connection signal="body_exited" from="door_nest3a_hall3" to="door_nest3a_hall3" method="_on_body_exited"]
