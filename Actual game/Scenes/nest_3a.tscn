@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://caoqn1f65ojjo"]
 
+[ext_resource type="Script" uid="uid://dg5mctdw73s1e" path="res://Actual game/Scripts/nest_3a.gd" id="1_qqo6s"]
 [ext_resource type="Texture2D" uid="uid://cy3m04xgb3snc" path="res://Actual game/Assets/nestroombg.png" id="1_s036n"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="2_mdcy5"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_qinog"]
@@ -36,6 +37,7 @@ size = Vector2(82, 248.5)
 size = Vector2(87, 186)
 
 [node name="nest_3a" type="Node2D" unique_id=7117616]
+script = ExtResource("1_qqo6s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1001561013]
 position = Vector2(480, 216)
@@ -68,14 +70,14 @@ shape = SubResource("RectangleShape2D_mdcy5")
 
 [node name="door_nest3a_hall3" type="Area2D" parent="." unique_id=1271201378 groups=["Door"]]
 z_index = 4
-position = Vector2(85, 259)
+position = Vector2(205, 257)
 script = ExtResource("3_qinog")
 Scene = "uid://w76aqeliv6m0"
-Door_Name = "door_2_E"
+Door_Name = "door_hall3_nest3a"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_nest3a_hall3" unique_id=1772681936]
 z_index = 4
-position = Vector2(109, -2)
+position = Vector2(-12, -2)
 shape = SubResource("RectangleShape2D_qqo6s")
 
 [connection signal="body_entered" from="door_nest3a_hall3" to="door_nest3a_hall3" method="_on_body_entered"]

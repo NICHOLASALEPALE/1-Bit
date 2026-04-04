@@ -13,13 +13,15 @@ var death:bool = false
 var room_order: Array[String] = [
 	"room_2",
 	"room_2a",
-	"hall_3"
+	"hall_3",
+	"nest_3a"
 ]
 
 var room_costs := {
 	"room_2": 1,
 	"Room_2a": 1,
-	"hall_3": 2
+	"hall_3": 2,
+	"nest_3a": 1
 }
 
 func _ready() -> void:
@@ -82,5 +84,7 @@ func update_enemy_position() -> void:
 			#print("Not enough progress to move.")
 			break
 
+
 func enemy_is_in_player_room() -> bool:
+	print("GameManager check returning: ", enemy_is_in_player_room)
 	return enemy_current_room == player_current_room
