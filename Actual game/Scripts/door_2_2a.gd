@@ -1,7 +1,7 @@
 extends Area2D
 
-@export_file("*.tscn") var location:String
-@export_file var door_dest:String
+@export_file("*.tscn") var Scene:String
+@export_file var Door_Name:String
 
 #@onready var game_manager: Node2D = %"Game Manager"
 
@@ -23,4 +23,4 @@ func _input(event: InputEvent) -> void:
 		GameManager.add_turn()
 
 		if GameManager.death == false:
-			DoorManager.go_to_door(location, door_dest)
+			Door_Manager.Go_To_Door(Scene, Door_Name)

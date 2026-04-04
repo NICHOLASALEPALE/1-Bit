@@ -19,7 +19,7 @@ config/icon="res://Testing Scenes/Assets/icon.svg"
 
 NavigationManager="*uid://bw8yklqtgggfr"
 GameManager="*uid://ckawl1lcpngxh"
-DoorManager="*uid://iavtfodyaud5"
+Door_Manager="*uid://iavtfodyaud5"
 
 [global_group]
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dlc2ft4bow2wg" path="res://Testing Scenes/Assets/Dwight_Placeholder.png" id="2_bawxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y15ja"]
-size = Vector2(144, 208.5)
+size = Vector2(78, 208.5)
 
 [node name="Dwight" type="CharacterBody2D" unique_id=1227741252 groups=["Dwight"]]
 script = ExtResource("1_8eesn")

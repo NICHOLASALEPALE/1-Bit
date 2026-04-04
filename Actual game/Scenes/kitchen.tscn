@@ -34,11 +34,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_868ro"]
-size = Vector2(52.5, 187)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oavsw"]
+size = Vector2(87, 186)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6m6m4"]
-size = Vector2(62, 206)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_868ro"]
+size = Vector2(87, 186)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cirs3"]
 size = Vector2(479, 29)
@@ -48,6 +48,7 @@ size = Vector2(82, 248.5)
 
 [node name="room_2" type="Node2D" unique_id=631835051]
 script = ExtResource("1_868ro")
+room_tag = "room_2_2a"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1663708550]
 position = Vector2(268, 218)
@@ -59,29 +60,32 @@ scale = Vector2(3, 2.9999998)
 sprite_frames = SubResource("SpriteFrames_s5jmk")
 autoplay = "default"
 
-[node name="door_2_E" type="Area2D" parent="." unique_id=1465891631 groups=["Door"]]
+[node name="door_2_2a" type="Area2D" parent="." unique_id=1729651106 groups=["Door"]]
+position = Vector2(112, 270)
+script = ExtResource("3_cirs3")
+Scene = "uid://dorft6m1euk0q"
+Door_Name = "door_2a_2"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_2_E" unique_id=1100409039]
-position = Vector2(526, 267)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_2_2a" unique_id=1189584218]
+position = Vector2(-95, -4)
+shape = SubResource("RectangleShape2D_oavsw")
+
+[node name="door_2_E" type="Area2D" parent="." unique_id=1941662413 groups=["Door"]]
+position = Vector2(399, 268)
+script = ExtResource("3_cirs3")
+Scene = "uid://w76aqeliv6m0"
+Door_Name = "door_hall3_E"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_2_E" unique_id=2138776686]
+position = Vector2(96, -8)
 shape = SubResource("RectangleShape2D_868ro")
 
-[node name="door_2_2a" type="Area2D" parent="." unique_id=531926338 groups=["Door"]]
-script = ExtResource("3_cirs3")
-location = "uid://dorft6m1euk0q"
-door_dest = "door_2a_2"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_2_2a" unique_id=1104975887]
-position = Vector2(5, 267)
-shape = SubResource("RectangleShape2D_6m6m4")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1090516268]
+position = Vector2(6, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=10353733]
 position = Vector2(267.5, 418.5)
 shape = SubResource("RectangleShape2D_cirs3")
-
-[node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_868ro")]
-position = Vector2(340, 293)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1358175013]
 position = Vector2(-283, 296)
@@ -97,5 +101,10 @@ position = Vector2(-283, 296)
 position = Vector2(852, -23)
 shape = SubResource("RectangleShape2D_2eoki")
 
+[node name="Dwight2" parent="." unique_id=153051731 instance=ExtResource("3_868ro")]
+position = Vector2(334, -110)
+
 [connection signal="body_entered" from="door_2_2a" to="door_2_2a" method="_on_body_entered"]
 [connection signal="body_exited" from="door_2_2a" to="door_2_2a" method="_on_body_exited"]
+[connection signal="body_entered" from="door_2_E" to="door_2_E" method="_on_body_entered"]
+[connection signal="body_exited" from="door_2_E" to="door_2_E" method="_on_body_exited"]
