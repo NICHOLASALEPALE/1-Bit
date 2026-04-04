@@ -14,6 +14,9 @@ func Go_To_Door(Scene_Path:String, Door_Name:String) -> void:
 	var Player:CharacterBody2D = get_tree().get_first_node_in_group("Dwight")
 	print(All_Doors)
 	
+	if door_sound_player:
+		door_sound_player.play()
+	
 	for X in len(All_Doors):
 		if All_Doors[X].name == Door_Name:
 			Player.global_position = All_Doors[X].global_position
