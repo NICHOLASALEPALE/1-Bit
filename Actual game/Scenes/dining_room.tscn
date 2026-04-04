@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://df4aa8g8ei773" path="res://Actual game/Scripts/room_2a.gd" id="1_t4cla"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_6ybij"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_t4cla"]
+[ext_resource type="AudioStream" uid="uid://d3q6ojx4qtp72" path="res://Actual game/Music/DoorSFX.mp3" id="5_6ybij"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7k41q"]
 atlas = ExtResource("1_6fhbr")
@@ -88,6 +89,9 @@ position = Vector2(-283, 296)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1308388636]
 position = Vector2(852, -23)
 shape = SubResource("RectangleShape2D_6fhbr")
+
+[node name="door sounds" type="AudioStreamPlayer2D" parent="." unique_id=1046623586]
+stream = ExtResource("5_6ybij")
 
 [connection signal="body_entered" from="door_2a_2" to="door_2a_2" method="_on_body_entered"]
 [connection signal="body_exited" from="door_2a_2" to="door_2a_2" method="_on_body_exited"]
