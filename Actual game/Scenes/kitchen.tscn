@@ -59,15 +59,16 @@ scale = Vector2(3, 2.9999998)
 sprite_frames = SubResource("SpriteFrames_s5jmk")
 autoplay = "default"
 
-[node name="door_2_E" type="Area2D" parent="." unique_id=1465891631]
+[node name="door_2_E" type="Area2D" parent="." unique_id=1465891631 groups=["Door"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_2_E" unique_id=1100409039]
 position = Vector2(526, 267)
 shape = SubResource("RectangleShape2D_868ro")
 
-[node name="door_2_2a" type="Area2D" parent="." unique_id=531926338]
+[node name="door_2_2a" type="Area2D" parent="." unique_id=531926338 groups=["Door"]]
 script = ExtResource("3_cirs3")
 location = "uid://dorft6m1euk0q"
+door_dest = "door_2a_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_2_2a" unique_id=1104975887]
 position = Vector2(5, 267)
@@ -80,7 +81,7 @@ position = Vector2(267.5, 418.5)
 shape = SubResource("RectangleShape2D_cirs3")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_868ro")]
-position = Vector2(288, 276)
+position = Vector2(455, 288)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1358175013]
 position = Vector2(-283, 296)
