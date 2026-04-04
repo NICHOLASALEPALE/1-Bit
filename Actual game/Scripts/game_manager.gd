@@ -6,20 +6,18 @@ var enemy_progress: int = 0
 
 @onready var score_label: Label = $"score label"
 
-var player_current_room: String = "Game"
-var enemy_current_room: String = "Game"
+var player_current_room: String = "room_2"
+var enemy_current_room: String = "room_2"
 var death:bool = false
 
 var room_order: Array[String] = [
-	"Game",
-	"level_1",
-	"level_2"
+	"room_2",
+	"room_2a"
 ]
 
 var room_costs := {
-	"Game": 1,
-	"level_1": 1,
-	"level_2": 1
+	"room_2": 1,
+	"Room_2a": 1
 }
 
 func _ready() -> void:
@@ -36,23 +34,24 @@ func add_turn(amount: int = 1) -> void:
 	turns += amount
 	enemy_progress += amount
 
-	#print("----- NEW TURN -----")
-	#print("Turns: ", turns)
-	#print("Player Room: ", player_current_room)
-	#print("Enemy Room BEFORE move: ", enemy_current_room)
-	#print("Enemy Progress BEFORE move: ", enemy_progress)
+	print("----- NEW TURN -----")
+	print("Turns: ", turns)
+	print("Player Room: ", player_current_room)
+	print("Enemy Room BEFORE move: ", enemy_current_room)
+	print("Enemy Progress BEFORE move: ", enemy_progress)
 
 	update_enemy_position()
 
-	#print("Enemy Room AFTER move: ", enemy_current_room)
-	#print("Enemy Progress AFTER move: ", enemy_progress)
+	print("Enemy Room AFTER move: ", enemy_current_room)
+	print("Enemy Progress AFTER move: ", enemy_progress)
 
 	if enemy_is_in_player_room():
 		print("Enemy has arrived in the player's room!")
+		
 		#death = true
 		#get_tree().change_scene_to_file("res://Testing Scenes/Scenes/lose_screen.tscn")
 
-	#print("--------------------")
+	print("--------------------")
 
 func update_enemy_position() -> void:
 	var enemy_index = room_order.find(enemy_current_room)

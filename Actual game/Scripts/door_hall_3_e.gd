@@ -24,3 +24,4 @@ func _input(event: InputEvent) -> void:
 
 		if GameManager.death == false:
 			DoorManager.go_to_door(location, door_dest)
+			
