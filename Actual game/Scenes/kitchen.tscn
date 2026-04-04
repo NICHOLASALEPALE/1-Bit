@@ -81,7 +81,7 @@ position = Vector2(267.5, 418.5)
 shape = SubResource("RectangleShape2D_cirs3")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_868ro")]
-position = Vector2(455, 288)
+position = Vector2(340, 293)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1358175013]
 position = Vector2(-283, 296)
