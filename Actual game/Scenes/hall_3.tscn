@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://w76aqeliv6m0"]
 
+[ext_resource type="Script" uid="uid://bprli2c0ymbf2" path="res://Actual game/Scripts/hall_3.gd" id="1_2myb6"]
 [ext_resource type="Texture2D" uid="uid://dh5vn7yh02i04" path="res://Actual game/Assets/Hall3bg.png" id="1_jjydm"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_deu7d"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_deu7d"]
@@ -14,6 +15,7 @@ size = Vector2(1443, 29)
 size = Vector2(157, 279)
 
 [node name="Hall_3" type="Node2D" unique_id=589864340]
+script = ExtResource("1_2myb6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1209563908]
 position = Vector2(720, 215)
@@ -49,18 +51,18 @@ limit_bottom = 425
 position = Vector2(716.5, 418.5)
 shape = SubResource("RectangleShape2D_0okny")
 
+[node name="Area2D2" type="StaticBody2D" parent="." unique_id=959023187]
+position = Vector2(-122, -194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=7613388]
+position = Vector2(1658, 436)
+shape = SubResource("RectangleShape2D_2myb6")
+
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=376981110]
 position = Vector2(-61, -97)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1764047721]
 position = Vector2(-39, 338)
-shape = SubResource("RectangleShape2D_2myb6")
-
-[node name="Area2D" type="StaticBody2D" parent="Area2D" unique_id=959023187]
-position = Vector2(-61, -97)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Area2D" unique_id=7613388]
-position = Vector2(1658, 436)
 shape = SubResource("RectangleShape2D_2myb6")
 
 [connection signal="body_entered" from="door_hall3_E" to="door_hall3_E" method="_on_body_entered"]

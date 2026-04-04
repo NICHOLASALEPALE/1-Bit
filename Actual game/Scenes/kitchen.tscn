@@ -48,7 +48,6 @@ size = Vector2(82, 248.5)
 
 [node name="room_2" type="Node2D" unique_id=631835051]
 script = ExtResource("1_868ro")
-room_tag = "room_2_2a"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1663708550]
 position = Vector2(268, 218)
