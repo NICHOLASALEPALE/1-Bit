@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bal7c60ujqqby"]
+
+[ext_resource type="Texture2D" uid="uid://de8ydn0vf1n71" path="res://Actual game/Assets/Kitchen_bg.png" id="1_ku08w"]
+[ext_resource type="PackedScene" uid="uid://chy47q62dxxb2" path="res://Testing Scenes/Scenes/May.tscn" id="3_amquv"]
+[ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_cirs3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku08w"]
+atlas = ExtResource("1_ku08w")
+region = Rect2(0, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upx5r"]
+atlas = ExtResource("1_ku08w")
+region = Rect2(160, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amquv"]
+atlas = ExtResource("1_ku08w")
+region = Rect2(320, 0, 160, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5jmk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku08w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upx5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amquv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_868ro"]
+size = Vector2(52.5, 187)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6m6m4"]
+size = Vector2(62, 206)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cirs3"]
+size = Vector2(479, 29)
+
+[node name="Kitchen" type="Node2D" unique_id=631835051]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1663708550]
+position = Vector2(268, 218)
+zoom = Vector2(2.4, 1.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2023326837]
+position = Vector2(268, 218)
+scale = Vector2(3, 2.9999998)
+sprite_frames = SubResource("SpriteFrames_s5jmk")
+autoplay = "default"
+
+[node name="CharacterBody2D" parent="." unique_id=1114735077 instance=ExtResource("3_amquv")]
+position = Vector2(205, 242)
+
+[node name="door_to_entrance" type="Area2D" parent="." unique_id=1465891631]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_to_entrance" unique_id=1100409039]
+position = Vector2(526, 267)
+shape = SubResource("RectangleShape2D_868ro")
+
+[node name="door_2_2a" type="Area2D" parent="." unique_id=531926338]
+script = ExtResource("3_cirs3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_2_2a" unique_id=1104975887]
+position = Vector2(5, 267)
+shape = SubResource("RectangleShape2D_6m6m4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1090516268]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=10353733]
+position = Vector2(267.5, 418.5)
+shape = SubResource("RectangleShape2D_cirs3")
+
+[connection signal="body_entered" from="door_2_2a" to="door_2_2a" method="_on_body_entered"]
+[connection signal="body_exited" from="door_2_2a" to="door_2_2a" method="_on_body_exited"]

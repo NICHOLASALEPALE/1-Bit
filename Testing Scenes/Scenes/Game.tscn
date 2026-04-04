@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://60limshg4upk"]
 
-[ext_resource type="Script" uid="uid://ckawl1lcpngxh" path="res://Testing Scenes/Scripts/game_manager.gd" id="1_b2bpf"]
+[ext_resource type="Script" uid="uid://ckawl1lcpngxh" path="res://Actual game/Scripts/game_manager.gd" id="1_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://chy47q62dxxb2" path="res://Testing Scenes/Scenes/May.tscn" id="1_iukft"]
 [ext_resource type="Script" uid="uid://clq2ditm6xr4i" path="res://Testing Scenes/Scripts/game.gd" id="1_nytag"]
 [ext_resource type="Texture2D" uid="uid://03lcjaqogor4" path="res://Testing Scenes/Assets/background_test.png" id="2_gl6un"]
