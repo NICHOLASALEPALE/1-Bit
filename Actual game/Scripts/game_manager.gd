@@ -12,12 +12,14 @@ var death:bool = false
 
 var room_order: Array[String] = [
 	"room_2",
-	"room_2a"
+	"room_2a",
+	"hall_3"
 ]
 
 var room_costs := {
 	"room_2": 1,
-	"Room_2a": 1
+	"Room_2a": 1,
+	"hall_3": 2
 }
 
 func _ready() -> void:
@@ -34,16 +36,16 @@ func add_turn(amount: int = 1) -> void:
 	turns += amount
 	enemy_progress += amount
 
-	print("----- NEW TURN -----")
-	print("Turns: ", turns)
-	print("Player Room: ", player_current_room)
-	print("Enemy Room BEFORE move: ", enemy_current_room)
-	print("Enemy Progress BEFORE move: ", enemy_progress)
+	#print("----- NEW TURN -----")
+	#print("Turns: ", turns)
+	#print("Player Room: ", player_current_room)
+	#print("Enemy Room BEFORE move: ", enemy_current_room)
+	#print("Enemy Progress BEFORE move: ", enemy_progress)
 
 	update_enemy_position()
 
-	print("Enemy Room AFTER move: ", enemy_current_room)
-	print("Enemy Progress AFTER move: ", enemy_progress)
+	#print("Enemy Room AFTER move: ", enemy_current_room)
+	#print("Enemy Progress AFTER move: ", enemy_progress)
 
 	if enemy_is_in_player_room():
 		print("Enemy has arrived in the player's room!")
@@ -51,7 +53,7 @@ func add_turn(amount: int = 1) -> void:
 		#death = true
 		#get_tree().change_scene_to_file("res://Testing Scenes/Scenes/lose_screen.tscn")
 
-	print("--------------------")
+	#print("--------------------")
 
 func update_enemy_position() -> void:
 	var enemy_index = room_order.find(enemy_current_room)
@@ -69,15 +71,15 @@ func update_enemy_position() -> void:
 		var next_room = room_order[next_index]
 		var cost = room_costs.get(next_room, 1)
 
-		print("Trying to move enemy to: ", next_room, " | Cost: ", cost)
+		#print("Trying to move enemy to: ", next_room, " | Cost: ", cost)
 
 		if enemy_progress >= cost:
 			enemy_progress -= cost
 			enemy_current_room = next_room
 			enemy_index = next_index
-			print("Enemy moved to: ", enemy_current_room)
+			#print("Enemy moved to: ", enemy_current_room)
 		else:
-			print("Not enough progress to move.")
+			#print("Not enough progress to move.")
 			break
 
 func enemy_is_in_player_room() -> bool:

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://w76aqeliv6m0"]
 
+[ext_resource type="Script" uid="uid://bprli2c0ymbf2" path="res://Actual game/Scripts/hall_3.gd" id="1_2myb6"]
 [ext_resource type="Texture2D" uid="uid://dh5vn7yh02i04" path="res://Actual game/Assets/Hall3bg.png" id="1_jjydm"]
-[ext_resource type="Script" uid="uid://h03wvxqsagya" path="res://Actual game/Scripts/door_hall_3_e.gd" id="2_46ff5"]
+[ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_deu7d"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_deu7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_deu7d"]
@@ -10,7 +11,11 @@ size = Vector2(87, 186)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0okny"]
 size = Vector2(1443, 29)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2myb6"]
+size = Vector2(157, 279)
+
 [node name="Hall_3" type="Node2D" unique_id=589864340]
+script = ExtResource("1_2myb6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1209563908]
 position = Vector2(720, 215)
@@ -18,16 +23,27 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_jjydm")
 
 [node name="door_hall3_E" type="Area2D" parent="." unique_id=1547821847 groups=["Door"]]
-script = ExtResource("2_46ff5")
-location = "uid://bal7c60ujqqby"
-door_dest = "door_2_E"
+z_index = 4
+position = Vector2(85, 259)
+script = ExtResource("2_deu7d")
+Scene = "uid://bal7c60ujqqby"
+Door_Name = "door_2_E"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_hall3_E" unique_id=1762252330]
-position = Vector2(-36, 263)
+z_index = 4
+position = Vector2(-94, 3)
 shape = SubResource("RectangleShape2D_deu7d")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_deu7d")]
 position = Vector2(805, 251)
+
+[node name="Camera2D2" type="Camera2D" parent="Dwight" unique_id=122629774]
+position = Vector2(-75, -105)
+zoom = Vector2(2.4, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 1440
+limit_bottom = 425
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1278780110]
 
@@ -35,9 +51,21 @@ position = Vector2(805, 251)
 position = Vector2(716.5, 418.5)
 shape = SubResource("RectangleShape2D_0okny")
 
-[node name="Camera2D2" type="Camera2D" parent="." unique_id=122629774]
-position = Vector2(268, 218)
-zoom = Vector2(2.4, 1.5)
+[node name="Area2D2" type="StaticBody2D" parent="." unique_id=959023187]
+position = Vector2(-122, -194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=7613388]
+position = Vector2(1658, 436)
+shape = SubResource("RectangleShape2D_2myb6")
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=376981110]
+position = Vector2(-61, -97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1764047721]
+position = Vector2(-39, 338)
+shape = SubResource("RectangleShape2D_2myb6")
 
 [connection signal="body_entered" from="door_hall3_E" to="door_hall3_E" method="_on_body_entered"]
 [connection signal="body_exited" from="door_hall3_E" to="door_hall3_E" method="_on_body_exited"]
+
+[editable path="Dwight"]

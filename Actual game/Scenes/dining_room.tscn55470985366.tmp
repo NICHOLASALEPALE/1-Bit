@@ -45,6 +45,7 @@ size = Vector2(82, 248.5)
 
 [node name="room_2a" type="Node2D" unique_id=284065715]
 script = ExtResource("1_t4cla")
+room_tag = "room_2a_2"
 
 [node name="Camera2D2" type="Camera2D" parent="." unique_id=593098835]
 position = Vector2(268, 218)
@@ -63,17 +64,16 @@ position = Vector2(267.5, 418.5)
 shape = SubResource("RectangleShape2D_7k41q")
 
 [node name="door_2a_2" type="Area2D" parent="." unique_id=830993500 groups=["Door"]]
-position = Vector2(397, 270)
 script = ExtResource("3_6ybij")
 Scene = "uid://bal7c60ujqqby"
 Door_Name = "door_2_2a"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_2a_2" unique_id=54163259]
-position = Vector2(96, -8)
+position = Vector2(543, 267)
 shape = SubResource("RectangleShape2D_t4cla")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_t4cla")]
-position = Vector2(415, -269)
+position = Vector2(510, 292)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=746660300]
 position = Vector2(-283, 296)
