@@ -47,6 +47,7 @@ func add_turn(amount: int = 1) -> void:
 
 	if enemy_is_in_player_room():
 		print("Enemy has arrived in the player's room!")
+		
 		#death = true
 		#get_tree().change_scene_to_file("res://Testing Scenes/Scenes/lose_screen.tscn")
 
