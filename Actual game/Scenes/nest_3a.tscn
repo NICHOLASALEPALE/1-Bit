@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://caoqn1f65ojjo"]
+[gd_scene format=3 uid="uid://bbyxfek0kchsf"]
 
 [ext_resource type="Texture2D" uid="uid://cy3m04xgb3snc" path="res://Actual game/Assets/nestroombg.png" id="1_s036n"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="2_mdcy5"]
