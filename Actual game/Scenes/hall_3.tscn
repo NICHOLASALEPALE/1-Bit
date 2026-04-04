@@ -21,16 +21,27 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_jjydm")
 
 [node name="door_hall3_E" type="Area2D" parent="." unique_id=1547821847 groups=["Door"]]
+z_index = 4
+position = Vector2(85, 259)
 script = ExtResource("2_deu7d")
 Scene = "uid://bal7c60ujqqby"
 Door_Name = "door_2_E"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_hall3_E" unique_id=1762252330]
-position = Vector2(-36, 263)
+z_index = 4
+position = Vector2(-94, 3)
 shape = SubResource("RectangleShape2D_deu7d")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_deu7d")]
 position = Vector2(805, 251)
+
+[node name="Camera2D2" type="Camera2D" parent="Dwight" unique_id=122629774]
+position = Vector2(-75, -105)
+zoom = Vector2(2.4, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 1440
+limit_bottom = 425
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1278780110]
 
@@ -38,14 +49,18 @@ position = Vector2(805, 251)
 position = Vector2(716.5, 418.5)
 shape = SubResource("RectangleShape2D_0okny")
 
-[node name="Camera2D2" type="Camera2D" parent="." unique_id=122629774]
-position = Vector2(268, 218)
-zoom = Vector2(2.4, 1.5)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=2078593847]
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=376981110]
+position = Vector2(-61, -97)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1764047721]
-position = Vector2(-109, 249)
+position = Vector2(-39, 338)
+shape = SubResource("RectangleShape2D_2myb6")
+
+[node name="Area2D" type="StaticBody2D" parent="Area2D" unique_id=959023187]
+position = Vector2(-61, -97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Area2D" unique_id=7613388]
+position = Vector2(1658, 436)
 shape = SubResource("RectangleShape2D_2myb6")
 
 [connection signal="body_entered" from="door_hall3_E" to="door_hall3_E" method="_on_body_entered"]
