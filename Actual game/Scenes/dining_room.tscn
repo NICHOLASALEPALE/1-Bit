@@ -65,6 +65,7 @@ shape = SubResource("RectangleShape2D_7k41q")
 [node name="door_2a_2" type="Area2D" parent="." unique_id=830993500]
 script = ExtResource("3_6fhbr")
 location = "uid://bal7c60ujqqby"
+Door_Dest = "door_2_2a"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_2a_2" unique_id=54163259]
 position = Vector2(543, 267)

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Dwight
 
-@onready var game_manager: Node2D = %"Game Manager"
+#@onready var game_manager: Node2D = %"Game Manager"
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
