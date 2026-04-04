@@ -1,6 +1,7 @@
 extends Area2D
 
-#@export_file("*.tscn") var level_1:String
+@export_file("*.tscn") var location:String
+@export_file var Door_Name:String
 
 #@onready var game_manager: Node2D = %"Game Manager"
 
@@ -22,4 +23,4 @@ func _input(event: InputEvent) -> void:
 		GameManager.add_turn()
 
 		if GameManager.death == false:
-			get_tree().change_scene_to_file("res://Actual game/Scenes/dining_room.tscn")
+			get_tree().change_scene_to_file(location)
