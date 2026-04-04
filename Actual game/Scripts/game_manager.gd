@@ -14,14 +14,18 @@ var room_order: Array[String] = [
 	"room_2",
 	"room_2a",
 	"hall_3",
-	"nest_3a"
+	"nest_3a",
+	"livingroom_3b",
+	"bedrom_3f"
 ]
 
 var room_costs := {
 	"room_2": 1,
 	"Room_2a": 1,
 	"hall_3": 2,
-	"nest_3a": 1
+	"nest_3a": 1,
+	"livingroom_3b": 1,
+	"bedrom_3f": 1
 }
 
 func _ready() -> void:

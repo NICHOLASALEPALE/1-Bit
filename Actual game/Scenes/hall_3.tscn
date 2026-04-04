@@ -38,7 +38,7 @@ position = Vector2(-94, 3)
 shape = SubResource("RectangleShape2D_deu7d")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_deu7d")]
-position = Vector2(805, 251)
+position = Vector2(258, 255)
 
 [node name="Camera2D2" type="Camera2D" parent="Dwight" unique_id=122629774]
 position = Vector2(-75, -105)

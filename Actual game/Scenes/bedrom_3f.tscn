@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://c84joa066lbts"]
+[gd_scene format=3 uid="uid://buqboobokxo8s"]
 
 [ext_resource type="Texture2D" uid="uid://cxodjpyv4v6i" path="res://Actual game/Assets/bedroom3f_bg.png" id="1_0g428"]
+[ext_resource type="Script" uid="uid://c7nuis1xmw6ty" path="res://Actual game/Scripts/bedrom_3f.gd" id="1_hx61m"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_hx61m"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_34yk3"]
 
@@ -17,46 +18,47 @@ size = Vector2(111, 409.25)
 size = Vector2(198, 226)
 
 [node name="bedrom_3f" type="Node2D" unique_id=1570299189]
+script = ExtResource("1_hx61m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1656372509]
 position = Vector2(576, 323)
-scale = Vector2(3.5875003, 4.375)
+scale = Vector2(3, 3)
 texture = ExtResource("1_0g428")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=998132232]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=571824779]
-position = Vector2(647, 649)
+position = Vector2(620, 532)
 shape = SubResource("RectangleShape2D_sbggg")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=382711157]
 position = Vector2(-344, 556)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=952345681]
-position = Vector2(1585, -163)
+position = Vector2(1489, -244)
 shape = SubResource("RectangleShape2D_t8kp0")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=826487064]
 position = Vector2(-283, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=907853302]
-position = Vector2(202.5, 102.375)
+position = Vector2(294, 12)
 shape = SubResource("RectangleShape2D_gyonp")
 
 [node name="door_bedroom3f_livingroom3b" type="Area2D" parent="." unique_id=981341354 groups=["Door"]]
 z_index = 4
-position = Vector2(85, 259)
+position = Vector2(131, 353)
 script = ExtResource("2_hx61m")
-Scene = "uid://w76aqeliv6m0"
-Door_Name = "door_2_E"
+Scene = "uid://drotd4rglbfk"
+Door_Name = "door_livingroom3b_bedroom3f"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedroom3f_livingroom3b" unique_id=2053007921]
 z_index = 4
-position = Vector2(410.75, 48.5)
+position = Vector2(-120, 17)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_34yk3")]
-position = Vector2(287, 319)
+position = Vector2(848, 412)
 
 [connection signal="body_entered" from="door_bedroom3f_livingroom3b" to="door_bedroom3f_livingroom3b" method="_on_body_entered"]
 [connection signal="body_exited" from="door_bedroom3f_livingroom3b" to="door_bedroom3f_livingroom3b" method="_on_body_exited"]

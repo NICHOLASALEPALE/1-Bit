@@ -46,7 +46,7 @@ sprite_frames = SubResource("SpriteFrames_qqo6s")
 autoplay = "default"
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("2_mdcy5")]
-position = Vector2(555, 213)
+position = Vector2(573, -146)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=911545791]
 
