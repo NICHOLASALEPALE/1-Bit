@@ -10,6 +10,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Dwight"):
-		enemy.Dwight_Is_Seen = false
+		#enemy.Dwight_Is_Seen = false
 		enemy.player = null
 		enemy.chasing = false
