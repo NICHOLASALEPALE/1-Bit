@@ -52,7 +52,7 @@ Door_Name = "door_livingroom3b_library3c"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_library3c_livingroom3b" unique_id=758937185]
 z_index = 4
-position = Vector2(-120, -49)
+position = Vector2(-78, -49)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="door_bedroom3f_birdroom3i" type="Area2D" parent="." unique_id=578988664 groups=["Door"]]

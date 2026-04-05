@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://beq5blvhaw6oh"
+path="res://.godot/imported/Mansion1.mp3-78900ca5f88b8ca52f4f4e31c040cb17.mp3str"
+
+[deps]
+
+source_file="res://Actual game/Music/Mansion1.mp3"
+dest_files=["res://.godot/imported/Mansion1.mp3-78900ca5f88b8ca52f4f4e31c040cb17.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

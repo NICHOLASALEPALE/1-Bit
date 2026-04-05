@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://drotd4rglbfk"]
 
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://hqo5yvcikfg1" path="res://Actual game/Assets/livingroom3bbg.png" id="1_bowc6"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_dvb1i"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_k656b"]
+=======
+[ext_resource type="Script" uid="uid://38ry6anpg3ub" path="res://Actual game/Scripts/livingroom_3b.gd" id="1_dvb1i"]
+[ext_resource type="Texture2D" uid="uid://hqo5yvcikfg1" path="res://Actual game/Assets/livingroom3bbg.png" id="1_wdesl"]
+[ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_ss616"]
+[ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_q6rbs"]
+>>>>>>> ec3f5c633b6c20d487be98712c1013350063e849
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bv5tr"]
 size = Vector2(1443, 29)
@@ -14,6 +21,7 @@ size = Vector2(88, 525.625)
 size = Vector2(127.75, 234)
 
 [node name="livingroom_3b" type="Node2D" unique_id=1548949849]
+script = ExtResource("1_dvb1i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1170000538]
 position = Vector2(584, 320)
@@ -42,14 +50,24 @@ shape = SubResource("RectangleShape2D_4ucsd")
 
 [node name="door_livingroom3b_bedroom3f" type="Area2D" parent="." unique_id=1499793468 groups=["Door"]]
 z_index = 4
+<<<<<<< HEAD
 position = Vector2(937, 395)
 script = ExtResource("2_dvb1i")
 Scene = "uid://c84joa066lbts"
+=======
+position = Vector2(933, 324)
+script = ExtResource("2_ss616")
+Scene = "uid://buqboobokxo8s"
+>>>>>>> ec3f5c633b6c20d487be98712c1013350063e849
 Door_Name = "door_bedroom3f_livingroom3b"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_livingroom3b_bedroom3f" unique_id=1967850138]
 z_index = 4
+<<<<<<< HEAD
 position = Vector2(86, -23)
+=======
+position = Vector2(76, 54)
+>>>>>>> ec3f5c633b6c20d487be98712c1013350063e849
 shape = SubResource("RectangleShape2D_hk5pt")
 
 [node name="door_livingroom3b_library3c" type="Area2D" parent="." unique_id=1931262091 groups=["Door"]]

@@ -38,7 +38,7 @@ position = Vector2(-94, 3)
 shape = SubResource("RectangleShape2D_deu7d")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_deu7d")]
-position = Vector2(805, 251)
+position = Vector2(258, 255)
 
 [node name="Camera2D2" type="Camera2D" parent="Dwight" unique_id=122629774]
 position = Vector2(-75, -105)
@@ -72,8 +72,13 @@ shape = SubResource("RectangleShape2D_2myb6")
 z_index = 4
 position = Vector2(1166, 250)
 script = ExtResource("2_deu7d")
+<<<<<<< HEAD
 Scene = "uid://bbyxfek0kchsf"
 Door_Name = "door_2_E"
+=======
+Scene = "uid://caoqn1f65ojjo"
+Door_Name = "door_nest3a_hall3"
+>>>>>>> ec3f5c633b6c20d487be98712c1013350063e849
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_hall3_nest3a" unique_id=496526868]
 z_index = 4

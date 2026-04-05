@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjxteknm6vrb5"
+path="res://.godot/imported/IntroOST.mp3-6b2e701205b87439dc08f3fc4abb091e.mp3str"
+
+[deps]
+
+source_file="res://Actual game/Music/IntroOST.mp3"
+dest_files=["res://.godot/imported/IntroOST.mp3-6b2e701205b87439dc08f3fc4abb091e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

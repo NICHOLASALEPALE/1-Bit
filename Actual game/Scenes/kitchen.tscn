@@ -101,7 +101,7 @@ position = Vector2(852, -23)
 shape = SubResource("RectangleShape2D_2eoki")
 
 [node name="Dwight2" parent="." unique_id=153051731 instance=ExtResource("3_868ro")]
-position = Vector2(334, -110)
+position = Vector2(316, 244)
 
 [connection signal="body_entered" from="door_2_2a" to="door_2_2a" method="_on_body_entered"]
 [connection signal="body_exited" from="door_2_2a" to="door_2_2a" method="_on_body_exited"]
