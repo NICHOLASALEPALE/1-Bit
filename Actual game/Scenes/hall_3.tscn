@@ -18,6 +18,7 @@ size = Vector2(157, 279)
 size = Vector2(87, 186)
 
 [node name="Hall_3" type="Node2D" unique_id=589864340]
+position = Vector2(1, 0)
 script = ExtResource("1_2myb6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1209563908]
