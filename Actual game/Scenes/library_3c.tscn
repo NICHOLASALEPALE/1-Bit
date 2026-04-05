@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bubsaa1s2wemp"]
+[gd_scene format=3 uid="uid://cp7yvnvmex256"]
 
 [ext_resource type="Texture2D" uid="uid://cjce2bw6tij6m" path="res://Actual game/Assets/library3c_bg.png" id="1_36u7w"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_nwv36"]
