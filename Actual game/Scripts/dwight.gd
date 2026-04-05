@@ -10,9 +10,13 @@ const JUMP_VELOCITY = -400.0
 var is_hiding: bool = false
 var can_hide: bool = false
 var hide_position: Vector2
+var current_hide_message: String = ""
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var hide_text_label: Label = $"../HideTextLabel"
+@onready var hide_text_timer: Timer = $"../HideTextTimer"
+
 
 
 func _physics_process(delta: float) -> void:
@@ -51,7 +55,26 @@ func toggle_hide() -> void:
 		hide_position = global_position
 		sprite.visible = false
 		collision.disabled = true
+		show_hide_text(current_hide_message)
+
 	else:
 		global_position = hide_position
 		sprite.visible = true
 		collision.disabled = false
+
+func show_hide_text(message: String) -> void:
+	if hide_text_label == null:
+		return
+
+	hide_text_label.text = ""
+	hide_text_label.visible = true
+
+	for i in message.length():
+		hide_text_label.text += message[i]
+		await get_tree().create_timer(0.03).timeout
+
+	if hide_text_timer:
+		hide_text_timer.start()
+
+func _on_hide_text_timer_timeout() -> void:
+	hide_text_label.visible = false

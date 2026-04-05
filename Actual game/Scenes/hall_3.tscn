@@ -76,7 +76,7 @@ shape = SubResource("RectangleShape2D_2myb6")
 z_index = 4
 position = Vector2(1116, 256)
 script = ExtResource("2_deu7d")
-Scene = "uid://bbyxfek0kchsf"
+Scene = "uid://c52bci0ae0x5e"
 Door_Name = "door_nest3a_hall3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_hall3_nest3a" unique_id=496526868]
@@ -91,11 +91,22 @@ script = ExtResource("5_2myb6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cabinet" unique_id=537128739]
 shape = SubResource("RectangleShape2D_lpq45")
 
+[node name="HideTextTimer" type="Timer" parent="." unique_id=720745439]
+one_shot = true
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=2096186883]
+offset_left = 323.0
+offset_top = 9.0
+offset_right = 560.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+
 [connection signal="body_entered" from="door_hall3_E" to="door_hall3_E" method="_on_body_entered"]
 [connection signal="body_exited" from="door_hall3_E" to="door_hall3_E" method="_on_body_exited"]
 [connection signal="body_entered" from="door_hall3_nest3a" to="door_hall3_nest3a" method="_on_body_entered"]
 [connection signal="body_exited" from="door_hall3_nest3a" to="door_hall3_nest3a" method="_on_body_exited"]
 [connection signal="body_entered" from="Cabinet" to="Cabinet" method="_on_body_entered"]
 [connection signal="body_exited" from="Cabinet" to="Cabinet" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight" method="_on_hide_text_timer_timeout"]
 
 [editable path="Dwight"]
