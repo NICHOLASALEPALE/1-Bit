@@ -72,11 +72,11 @@ shape = SubResource("RectangleShape2D_oavsw")
 [node name="door_2_E" type="Area2D" parent="." unique_id=1941662413 groups=["Door"]]
 position = Vector2(454, 274)
 script = ExtResource("3_cirs3")
-Scene = "uid://w76aqeliv6m0"
+Scene = "uid://bym4m32ta75gt"
 Door_Name = "door_hall3_E"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_2_E" unique_id=2138776686]
-position = Vector2(90, 6)
+position = Vector2(66, 2)
 shape = SubResource("RectangleShape2D_868ro")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1090516268]

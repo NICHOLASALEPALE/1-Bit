@@ -14,7 +14,7 @@ size = Vector2(93, 416.25)
 size = Vector2(111, 409.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy5sv"]
-size = Vector2(198, 226)
+size = Vector2(204, 288)
 
 [node name="library_3c" type="Node2D" unique_id=397447914]
 
@@ -43,34 +43,34 @@ position = Vector2(-283, 296)
 position = Vector2(202.5, 102.375)
 shape = SubResource("RectangleShape2D_gyonp")
 
-[node name="door_bedroom3f_livingroom3b" type="Area2D" parent="." unique_id=2071999030 groups=["Door"]]
+[node name="door_library3c_livingroom3b" type="Area2D" parent="." unique_id=2071999030 groups=["Door"]]
 z_index = 4
-position = Vector2(85, 259)
+position = Vector2(77, 483)
 script = ExtResource("2_nwv36")
-Scene = "uid://w76aqeliv6m0"
-Door_Name = "door_2_E"
+Scene = "uid://drotd4rglbfk"
+Door_Name = "door_livingroom3b_library3c"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedroom3f_livingroom3b" unique_id=758937185]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_library3c_livingroom3b" unique_id=758937185]
 z_index = 4
-position = Vector2(-168, 177)
+position = Vector2(-120, -49)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="door_bedroom3f_birdroom3i" type="Area2D" parent="." unique_id=578988664 groups=["Door"]]
 z_index = 4
-position = Vector2(85, 259)
+position = Vector2(773, 371)
 script = ExtResource("2_nwv36")
-Scene = "uid://w76aqeliv6m0"
-Door_Name = "door_2_E"
+Scene = "uid://bq308ja6eswli"
+Door_Name = "door_birdroom3i_library3c"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedroom3f_birdroom3i" unique_id=174330501]
 z_index = 4
-position = Vector2(808, 109)
+position = Vector2(131, 30)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_p88re")]
 position = Vector2(508, 269)
 
-[connection signal="body_entered" from="door_bedroom3f_livingroom3b" to="door_bedroom3f_livingroom3b" method="_on_body_entered"]
-[connection signal="body_exited" from="door_bedroom3f_livingroom3b" to="door_bedroom3f_livingroom3b" method="_on_body_exited"]
+[connection signal="body_entered" from="door_library3c_livingroom3b" to="door_library3c_livingroom3b" method="_on_body_entered"]
+[connection signal="body_exited" from="door_library3c_livingroom3b" to="door_library3c_livingroom3b" method="_on_body_exited"]
 [connection signal="body_entered" from="door_bedroom3f_birdroom3i" to="door_bedroom3f_birdroom3i" method="_on_body_entered"]
 [connection signal="body_exited" from="door_bedroom3f_birdroom3i" to="door_bedroom3f_birdroom3i" method="_on_body_exited"]

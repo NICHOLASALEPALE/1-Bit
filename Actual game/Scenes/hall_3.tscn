@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://w76aqeliv6m0"]
+[gd_scene format=3 uid="uid://bym4m32ta75gt"]
 
-[ext_resource type="Script" uid="uid://bprli2c0ymbf2" path="res://Actual game/Scripts/hall_3.gd" id="1_2myb6"]
+[ext_resource type="Script" path="res://Actual game/Scripts/hall_3.gd" id="1_2myb6"]
 [ext_resource type="Texture2D" uid="uid://dh5vn7yh02i04" path="res://Actual game/Assets/Hall3bg.png" id="1_jjydm"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_deu7d"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_deu7d"]
@@ -70,14 +70,14 @@ shape = SubResource("RectangleShape2D_2myb6")
 
 [node name="door_hall3_nest3a" type="Area2D" parent="." unique_id=2014905550 groups=["Door"]]
 z_index = 4
-position = Vector2(1116, 256)
+position = Vector2(1166, 250)
 script = ExtResource("2_deu7d")
-Scene = "uid://caoqn1f65ojjo"
+Scene = "uid://bbyxfek0kchsf"
 Door_Name = "door_2_E"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_hall3_nest3a" unique_id=496526868]
 z_index = 4
-position = Vector2(109, -2)
+position = Vector2(59, 2)
 shape = SubResource("RectangleShape2D_1h110")
 
 [connection signal="body_entered" from="door_hall3_E" to="door_hall3_E" method="_on_body_entered"]

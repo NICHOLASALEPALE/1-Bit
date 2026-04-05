@@ -45,19 +45,19 @@ shape = SubResource("RectangleShape2D_gyonp")
 
 [node name="door_birdroom3i_library3c" type="Area2D" parent="." unique_id=2042919459 groups=["Door"]]
 z_index = 4
-position = Vector2(85, 259)
+position = Vector2(71, 433)
 script = ExtResource("2_2ebbx")
-Scene = "uid://w76aqeliv6m0"
-Door_Name = "door_2_E"
+Scene = "uid://bubsaa1s2wemp"
+Door_Name = "door_bedroom3f_birdroom3i"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_birdroom3i_library3c" unique_id=1400884685]
 z_index = 4
-position = Vector2(-168, 177)
+position = Vector2(-126, -29)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="door_birdroom3i_bathroom3e" type="Area2D" parent="." unique_id=414370014 groups=["Door"]]
 z_index = 4
-position = Vector2(85, 259)
+position = Vector2(179, 233)
 script = ExtResource("2_2ebbx")
 Scene = "uid://w76aqeliv6m0"
 Door_Name = "door_2_E"
@@ -68,7 +68,7 @@ position = Vector2(362, 183)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="Dwight" parent="door_birdroom3i_bathroom3e" unique_id=1227741252 instance=ExtResource("3_utkf0")]
-position = Vector2(820, 33)
+position = Vector2(30, 105)
 
 [connection signal="body_entered" from="door_birdroom3i_library3c" to="door_birdroom3i_library3c" method="_on_body_entered"]
 [connection signal="body_exited" from="door_birdroom3i_library3c" to="door_birdroom3i_library3c" method="_on_body_exited"]
