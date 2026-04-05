@@ -14,6 +14,6 @@ func _ready() -> void:
 	if GameManager.enemy_is_in_player_room():
 		print("enemy spawned")
 		var monster = monster_scene.instantiate()
-		monster.global_position = Vector2(100, 200)
+		monster.global_position = Vector2(100, 500)
 		add_child(monster)
 		monster.start_walking()

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bq308ja6eswli"]
+[gd_scene format=3 uid="uid://c72vnod30idnw"]
 
 [ext_resource type="Texture2D" uid="uid://cteu7bmarpe7l" path="res://Actual game/Assets/Birdroom3i_bg.png" id="1_dvoyw"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_2ebbx"]
@@ -20,7 +20,7 @@ size = Vector2(198, 226)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1222804531]
 position = Vector2(576, 320.00003)
-scale = Vector2(3.5625, 4.333334)
+scale = Vector2(3, 3)
 texture = ExtResource("1_dvoyw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2108840794]

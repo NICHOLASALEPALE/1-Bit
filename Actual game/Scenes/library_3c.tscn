@@ -19,8 +19,8 @@ size = Vector2(198, 226)
 [node name="library_3c" type="Node2D" unique_id=397447914]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=173892001]
-position = Vector2(575, 315)
-scale = Vector2(7.1625, 4.2916665)
+position = Vector2(268, 218)
+scale = Vector2(3, 3)
 texture = ExtResource("1_36u7w")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1931391466]
@@ -69,6 +69,10 @@ shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_p88re")]
 position = Vector2(508, 269)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=615120530]
+position = Vector2(268, 218)
+zoom = Vector2(2.4, 1.5)
 
 [connection signal="body_entered" from="door_bedroom3f_livingroom3b" to="door_bedroom3f_livingroom3b" method="_on_body_entered"]
 [connection signal="body_exited" from="door_bedroom3f_livingroom3b" to="door_bedroom3f_livingroom3b" method="_on_body_exited"]

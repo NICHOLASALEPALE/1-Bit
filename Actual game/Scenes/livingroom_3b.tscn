@@ -19,7 +19,7 @@ script = ExtResource("1_dvb1i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1170000538]
 position = Vector2(584, 320)
-scale = Vector2(3.6125, 4.3333335)
+scale = Vector2(3, 3)
 texture = ExtResource("1_wdesl")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1091393133]
