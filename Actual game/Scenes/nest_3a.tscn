@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bbyxfek0kchsf"]
+[gd_scene format=3 uid="uid://c52bci0ae0x5e"]
 
-[ext_resource type="Script" path="res://Actual game/Scripts/nest_3a.gd" id="1_qqo6s"]
+[ext_resource type="Script" uid="uid://dg5mctdw73s1e" path="res://Actual game/Scripts/nest_3a.gd" id="1_qqo6s"]
 [ext_resource type="Texture2D" uid="uid://cy3m04xgb3snc" path="res://Actual game/Assets/nestroombg.png" id="1_s036n"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="2_mdcy5"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_qinog"]
@@ -46,11 +46,20 @@ sprite_frames = SubResource("SpriteFrames_qqo6s")
 autoplay = "default"
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("2_mdcy5")]
-<<<<<<< HEAD
-position = Vector2(138, 255)
-=======
-position = Vector2(573, -146)
->>>>>>> ec3f5c633b6c20d487be98712c1013350063e849
+position = Vector2(154, -326)
+
+[node name="Sprite2D" parent="Dwight" index="0" unique_id=886479001]
+position = Vector2(84, 21)
+
+[node name="CollisionShape2D" parent="Dwight" index="1" unique_id=1377059615]
+position = Vector2(5, 0)
+
+[node name="Camera2D" type="Camera2D" parent="Dwight" unique_id=1507358274]
+zoom = Vector2(2.4, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 960
+limit_bottom = 425
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=911545791]
 
@@ -69,34 +78,36 @@ shape = SubResource("RectangleShape2D_mdcy5")
 position = Vector2(-283, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1330185179]
-position = Vector2(217, -34)
+position = Vector2(222, -36)
 shape = SubResource("RectangleShape2D_mdcy5")
 
-[node name="door_nest3a_livingroom3b" type="Area2D" parent="." unique_id=1271201378 groups=["Door"]]
+[node name="door_nest3a_livingroom_3b" type="Area2D" parent="." unique_id=1078601244 groups=["Door"]]
+z_index = 4
+position = Vector2(62, 274)
+script = ExtResource("3_qinog")
+Scene = "uid://c61y3lgs4tnvw"
+Door_Name = "door_livingroom3b_nest3a"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_nest3a_livingroom_3b" unique_id=1905950260]
+z_index = 4
+position = Vector2(-66, -8)
+shape = SubResource("RectangleShape2D_qqo6s")
+
+[node name="door_nest3a_hall3" type="Area2D" parent="." unique_id=1271201378 groups=["Door"]]
 z_index = 4
 position = Vector2(205, 257)
 script = ExtResource("3_qinog")
-Scene = "uid://drotd4rglbfk"
-Door_Name = "door_livingroom3b_nest3a"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_nest3a_livingroom3b" unique_id=1772681936]
-z_index = 4
-position = Vector2(-12, -2)
-shape = SubResource("RectangleShape2D_qqo6s")
-
-[node name="door_nest3a_hall3" type="Area2D" parent="door_nest3a_livingroom3b" unique_id=786394306 groups=["Door"]]
-z_index = 4
-position = Vector2(-161, 35)
-script = ExtResource("3_qinog")
-Scene = "uid://bym4m32ta75gt"
+Scene = "uid://brsts3y1atj88"
 Door_Name = "door_hall3_nest3a"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_nest3a_livingroom3b/door_nest3a_hall3" unique_id=1514561568]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_nest3a_hall3" unique_id=1772681936]
 z_index = 4
-position = Vector2(-65, -27)
+position = Vector2(-6, -2)
 shape = SubResource("RectangleShape2D_qqo6s")
 
-[connection signal="body_entered" from="door_nest3a_livingroom3b" to="door_nest3a_livingroom3b" method="_on_body_entered"]
-[connection signal="body_exited" from="door_nest3a_livingroom3b" to="door_nest3a_livingroom3b" method="_on_body_exited"]
-[connection signal="body_entered" from="door_nest3a_livingroom3b/door_nest3a_hall3" to="door_nest3a_livingroom3b/door_nest3a_hall3" method="_on_body_entered"]
-[connection signal="body_exited" from="door_nest3a_livingroom3b/door_nest3a_hall3" to="door_nest3a_livingroom3b/door_nest3a_hall3" method="_on_body_exited"]
+[connection signal="body_entered" from="door_nest3a_livingroom_3b" to="door_nest3a_livingroom_3b" method="_on_body_entered"]
+[connection signal="body_exited" from="door_nest3a_livingroom_3b" to="door_nest3a_livingroom_3b" method="_on_body_exited"]
+[connection signal="body_entered" from="door_nest3a_hall3" to="door_nest3a_hall3" method="_on_body_entered"]
+[connection signal="body_exited" from="door_nest3a_hall3" to="door_nest3a_hall3" method="_on_body_exited"]
+
+[editable path="Dwight"]

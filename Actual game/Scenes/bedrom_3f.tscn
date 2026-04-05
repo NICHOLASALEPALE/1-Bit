@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://buqboobokxo8s"]
+[gd_scene format=3 uid="uid://bpga1va5aht4p"]
 
 [ext_resource type="Texture2D" uid="uid://cxodjpyv4v6i" path="res://Actual game/Assets/bedroom3f_bg.png" id="1_0g428"]
 [ext_resource type="Script" uid="uid://c7nuis1xmw6ty" path="res://Actual game/Scripts/bedrom_3f.gd" id="1_hx61m"]
@@ -15,42 +15,37 @@ size = Vector2(93, 416.25)
 size = Vector2(111, 409.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy5sv"]
-size = Vector2(198, 226)
+size = Vector2(70, 226)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx61m"]
+size = Vector2(190, 148.25)
 
 [node name="bedrom_3f" type="Node2D" unique_id=1570299189]
 script = ExtResource("1_hx61m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1656372509]
-position = Vector2(576, 323)
+position = Vector2(480, 218)
 scale = Vector2(3, 3)
 texture = ExtResource("1_0g428")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=998132232]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=571824779]
-position = Vector2(620, 532)
+position = Vector2(689, 421)
 shape = SubResource("RectangleShape2D_sbggg")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=382711157]
 position = Vector2(-344, 556)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=952345681]
-<<<<<<< HEAD
-position = Vector2(1515, -183)
-=======
-position = Vector2(1489, -244)
->>>>>>> ec3f5c633b6c20d487be98712c1013350063e849
+position = Vector2(1378, -328)
 shape = SubResource("RectangleShape2D_t8kp0")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=826487064]
 position = Vector2(-283, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=907853302]
-<<<<<<< HEAD
-position = Vector2(261, 108)
-=======
-position = Vector2(294, 12)
->>>>>>> ec3f5c633b6c20d487be98712c1013350063e849
+position = Vector2(205, -88)
 shape = SubResource("RectangleShape2D_gyonp")
 
 [node name="door_bedroom3f_livingroom3b" type="Area2D" parent="." unique_id=981341354 groups=["Door"]]
@@ -62,15 +57,35 @@ Door_Name = "door_livingroom3b_bedroom3f"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedroom3f_livingroom3b" unique_id=2053007921]
 z_index = 4
-<<<<<<< HEAD
-position = Vector2(-75, 145)
-=======
-position = Vector2(-120, 17)
->>>>>>> ec3f5c633b6c20d487be98712c1013350063e849
+position = Vector2(-129, -102)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_34yk3")]
-position = Vector2(848, 412)
+position = Vector2(536, 251)
+
+[node name="Camera2D" type="Camera2D" parent="Dwight" unique_id=698157081]
+position = Vector2(-56, -33)
+scale = Vector2(3, 3)
+zoom = Vector2(2.4, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 960
+limit_bottom = 425
+
+[node name="Sprite2D" parent="Dwight" index="1" unique_id=886479001]
+position = Vector2(79, 21)
+
+[node name="CollisionShape2D" parent="Dwight" index="2" unique_id=1377059615]
+position = Vector2(0, 0)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1657425087]
+position = Vector2(834, 304)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=28363584]
+position = Vector2(11, 20)
+shape = SubResource("RectangleShape2D_hx61m")
 
 [connection signal="body_entered" from="door_bedroom3f_livingroom3b" to="door_bedroom3f_livingroom3b" method="_on_body_entered"]
 [connection signal="body_exited" from="door_bedroom3f_livingroom3b" to="door_bedroom3f_livingroom3b" method="_on_body_exited"]
+
+[editable path="Dwight"]

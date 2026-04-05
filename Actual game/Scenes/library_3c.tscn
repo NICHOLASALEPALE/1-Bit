@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bubsaa1s2wemp"]
 
 [ext_resource type="Texture2D" uid="uid://cjce2bw6tij6m" path="res://Actual game/Assets/library3c_bg.png" id="1_36u7w"]
+[ext_resource type="Script" uid="uid://dcq1oskyn3ttu" path="res://Actual game/Scripts/library_3c.gd" id="1_nwv36"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_nwv36"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_p88re"]
 
@@ -14,61 +15,66 @@ size = Vector2(93, 416.25)
 size = Vector2(111, 409.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy5sv"]
-size = Vector2(204, 288)
+size = Vector2(99, 170)
 
 [node name="library_3c" type="Node2D" unique_id=397447914]
+script = ExtResource("1_nwv36")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=173892001]
-position = Vector2(575, 315)
-scale = Vector2(7.1625, 4.2916665)
+position = Vector2(268, 218)
+scale = Vector2(3, 3)
 texture = ExtResource("1_36u7w")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1931391466]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1919965323]
-position = Vector2(647, 649)
+position = Vector2(746, 419)
 shape = SubResource("RectangleShape2D_sbggg")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1056561323]
 position = Vector2(-344, 556)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=798342466]
-position = Vector2(1585, -163)
+position = Vector2(938, -345)
 shape = SubResource("RectangleShape2D_t8kp0")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=448009621]
 position = Vector2(-283, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1662135252]
-position = Vector2(202.5, 102.375)
+position = Vector2(236, -68)
 shape = SubResource("RectangleShape2D_gyonp")
 
 [node name="door_library3c_livingroom3b" type="Area2D" parent="." unique_id=2071999030 groups=["Door"]]
 z_index = 4
-position = Vector2(77, 483)
+position = Vector2(692, 355)
 script = ExtResource("2_nwv36")
-Scene = "uid://drotd4rglbfk"
+Scene = "uid://c61y3lgs4tnvw"
 Door_Name = "door_livingroom3b_library3c"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_library3c_livingroom3b" unique_id=758937185]
 z_index = 4
-position = Vector2(-78, -49)
+position = Vector2(-281, -102)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="door_bedroom3f_birdroom3i" type="Area2D" parent="." unique_id=578988664 groups=["Door"]]
 z_index = 4
-position = Vector2(773, 371)
+position = Vector2(369, 557)
 script = ExtResource("2_nwv36")
 Scene = "uid://bq308ja6eswli"
 Door_Name = "door_birdroom3i_library3c"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedroom3f_birdroom3i" unique_id=174330501]
 z_index = 4
-position = Vector2(131, 30)
+position = Vector2(-16, 0)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_p88re")]
-position = Vector2(508, 269)
+position = Vector2(1154, 178)
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=1185978009]
+position = Vector2(268, 218)
+zoom = Vector2(2.4, 1.5)
 
 [connection signal="body_entered" from="door_library3c_livingroom3b" to="door_library3c_livingroom3b" method="_on_body_entered"]
 [connection signal="body_exited" from="door_library3c_livingroom3b" to="door_library3c_livingroom3b" method="_on_body_exited"]

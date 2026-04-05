@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://c72vnod30idnw"]
 
+[ext_resource type="Script" uid="uid://b8lb7n1w8lox" path="res://Actual game/Scripts/birdroom_3i.gd" id="1_2ebbx"]
 [ext_resource type="Texture2D" uid="uid://cteu7bmarpe7l" path="res://Actual game/Assets/Birdroom3i_bg.png" id="1_dvoyw"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_2ebbx"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_utkf0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbggg"]
-size = Vector2(1443, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8kp0"]
 size = Vector2(93, 416.25)
@@ -14,33 +12,31 @@ size = Vector2(93, 416.25)
 size = Vector2(111, 409.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy5sv"]
-size = Vector2(198, 226)
+size = Vector2(106, 226)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvoyw"]
+size = Vector2(1443, 29)
 
 [node name="birdroom_3i" type="Node2D" unique_id=1964630806]
+script = ExtResource("1_2ebbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1222804531]
-position = Vector2(576, 320.00003)
+position = Vector2(480, 216)
 scale = Vector2(3, 3)
 texture = ExtResource("1_dvoyw")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2108840794]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=503798152]
-position = Vector2(647, 649)
-shape = SubResource("RectangleShape2D_sbggg")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1855179288]
 position = Vector2(-344, 556)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=2140505217]
-position = Vector2(1585, -163)
+position = Vector2(1382, -334)
 shape = SubResource("RectangleShape2D_t8kp0")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=2118248573]
 position = Vector2(-283, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=516395260]
-position = Vector2(202.5, 102.375)
+position = Vector2(189, -91)
 shape = SubResource("RectangleShape2D_gyonp")
 
 [node name="door_birdroom3i_library3c" type="Area2D" parent="." unique_id=2042919459 groups=["Door"]]
@@ -52,25 +48,32 @@ Door_Name = "door_bedroom3f_birdroom3i"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_birdroom3i_library3c" unique_id=1400884685]
 z_index = 4
-position = Vector2(-126, -29)
+position = Vector2(-96, -158)
 shape = SubResource("RectangleShape2D_jy5sv")
 
-[node name="door_birdroom3i_bathroom3e" type="Area2D" parent="." unique_id=414370014 groups=["Door"]]
-z_index = 4
-position = Vector2(179, 233)
-script = ExtResource("2_2ebbx")
-Scene = "uid://w76aqeliv6m0"
-Door_Name = "door_2_E"
+[node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_utkf0")]
+position = Vector2(203, -110)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_birdroom3i_bathroom3e" unique_id=794217935]
-z_index = 4
-position = Vector2(362, 183)
-shape = SubResource("RectangleShape2D_jy5sv")
+[node name="Sprite2D" parent="Dwight" index="0" unique_id=886479001]
+position = Vector2(83, 31)
 
-[node name="Dwight" parent="door_birdroom3i_bathroom3e" unique_id=1227741252 instance=ExtResource("3_utkf0")]
-position = Vector2(30, 105)
+[node name="CollisionShape2D" parent="Dwight" index="1" unique_id=1377059615]
+position = Vector2(4, 10)
+
+[node name="Camera2D" type="Camera2D" parent="Dwight" unique_id=1312006387]
+zoom = Vector2(2.4, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 960
+limit_bottom = 425
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=394384719]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2078227601]
+position = Vector2(716.5, 418.5)
+shape = SubResource("RectangleShape2D_dvoyw")
 
 [connection signal="body_entered" from="door_birdroom3i_library3c" to="door_birdroom3i_library3c" method="_on_body_entered"]
 [connection signal="body_exited" from="door_birdroom3i_library3c" to="door_birdroom3i_library3c" method="_on_body_exited"]
-[connection signal="body_entered" from="door_birdroom3i_bathroom3e" to="door_birdroom3i_bathroom3e" method="_on_body_entered"]
-[connection signal="body_exited" from="door_birdroom3i_bathroom3e" to="door_birdroom3i_bathroom3e" method="_on_body_exited"]
+
+[editable path="Dwight"]
