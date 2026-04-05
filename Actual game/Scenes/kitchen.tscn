@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://de8ydn0vf1n71" path="res://Actual game/Assets/Kitchen_bg.png" id="1_ku08w"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_868ro"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_cirs3"]
+[ext_resource type="AudioStream" uid="uid://clkhyevdibb3o" path="res://Actual game/Music/I fw Candy apples.mp3" id="5_2eoki"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ku08w"]
 atlas = ExtResource("1_ku08w")
@@ -102,6 +103,9 @@ shape = SubResource("RectangleShape2D_2eoki")
 
 [node name="Dwight2" parent="." unique_id=153051731 instance=ExtResource("3_868ro")]
 position = Vector2(334, -110)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1335422924]
+stream = ExtResource("5_2eoki")
 
 [connection signal="body_entered" from="door_2_2a" to="door_2_2a" method="_on_body_entered"]
 [connection signal="body_exited" from="door_2_2a" to="door_2_2a" method="_on_body_exited"]
