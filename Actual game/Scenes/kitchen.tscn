@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_868ro"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_cirs3"]
 [ext_resource type="AudioStream" uid="uid://clkhyevdibb3o" path="res://Actual game/Music/I fw Candy apples.mp3" id="5_2eoki"]
+[ext_resource type="Script" uid="uid://c7ow17lrsmqkk" path="res://Actual game/Scripts/cabinet.gd" id="6_oavsw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ku08w"]
 atlas = ExtResource("1_ku08w")
@@ -46,6 +47,9 @@ size = Vector2(479, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eoki"]
 size = Vector2(82, 248.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqjef"]
+size = Vector2(164, 82)
 
 [node name="room_2" type="Node2D" unique_id=631835051]
 script = ExtResource("1_868ro")
@@ -102,12 +106,22 @@ position = Vector2(852, -23)
 shape = SubResource("RectangleShape2D_2eoki")
 
 [node name="Dwight2" parent="." unique_id=153051731 instance=ExtResource("3_868ro")]
-position = Vector2(393, 651)
+position = Vector2(393, 236)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1335422924]
 stream = ExtResource("5_2eoki")
+
+[node name="Cabinet" type="Area2D" parent="." unique_id=2068679848]
+position = Vector2(446, 322)
+script = ExtResource("6_oavsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabinet" unique_id=262035472]
+position = Vector2(-186, -35)
+shape = SubResource("RectangleShape2D_oqjef")
 
 [connection signal="body_entered" from="door_2_2a" to="door_2_2a" method="_on_body_entered"]
 [connection signal="body_exited" from="door_2_2a" to="door_2_2a" method="_on_body_exited"]
 [connection signal="body_entered" from="door_2_E" to="door_2_E" method="_on_body_entered"]
 [connection signal="body_exited" from="door_2_E" to="door_2_E" method="_on_body_exited"]
+[connection signal="body_entered" from="Cabinet" to="Cabinet" method="_on_body_entered"]
+[connection signal="body_exited" from="Cabinet" to="Cabinet" method="_on_body_exited"]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dh5vn7yh02i04" path="res://Actual game/Assets/Hall3bg.png" id="1_jjydm"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_deu7d"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_deu7d"]
+[ext_resource type="Script" uid="uid://c7ow17lrsmqkk" path="res://Actual game/Scripts/cabinet.gd" id="5_2myb6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_deu7d"]
 size = Vector2(87, 186)
@@ -16,6 +17,9 @@ size = Vector2(157, 279)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1h110"]
 size = Vector2(87, 186)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpq45"]
+size = Vector2(164, 82)
 
 [node name="Hall_3" type="Node2D" unique_id=589864340]
 script = ExtResource("1_2myb6")
@@ -38,7 +42,7 @@ position = Vector2(-94, 3)
 shape = SubResource("RectangleShape2D_deu7d")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_deu7d")]
-position = Vector2(219, -302)
+position = Vector2(384, 204)
 
 [node name="Camera2D2" type="Camera2D" parent="Dwight" unique_id=122629774]
 position = Vector2(-75, -105)
@@ -80,9 +84,18 @@ z_index = 4
 position = Vector2(109, -2)
 shape = SubResource("RectangleShape2D_1h110")
 
+[node name="Cabinet" type="Area2D" parent="." unique_id=2114613255]
+position = Vector2(446, 322)
+script = ExtResource("5_2myb6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabinet" unique_id=537128739]
+shape = SubResource("RectangleShape2D_lpq45")
+
 [connection signal="body_entered" from="door_hall3_E" to="door_hall3_E" method="_on_body_entered"]
 [connection signal="body_exited" from="door_hall3_E" to="door_hall3_E" method="_on_body_exited"]
 [connection signal="body_entered" from="door_hall3_nest3a" to="door_hall3_nest3a" method="_on_body_entered"]
 [connection signal="body_exited" from="door_hall3_nest3a" to="door_hall3_nest3a" method="_on_body_exited"]
+[connection signal="body_entered" from="Cabinet" to="Cabinet" method="_on_body_entered"]
+[connection signal="body_exited" from="Cabinet" to="Cabinet" method="_on_body_exited"]
 
 [editable path="Dwight"]
