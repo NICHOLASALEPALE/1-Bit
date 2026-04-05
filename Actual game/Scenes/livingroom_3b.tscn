@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hqo5yvcikfg1" path="res://Actual game/Assets/livingroom3bbg.png" id="1_wdesl"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_ss616"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_q6rbs"]
+[ext_resource type="Script" uid="uid://chb3xhboyn34d" path="res://Actual game/Scripts/couch.gd" id="5_k656b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ucsd"]
 size = Vector2(88, 525.625)
@@ -13,6 +14,9 @@ size = Vector2(86.75, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvb1i"]
 size = Vector2(1443, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra754"]
+size = Vector2(391, 111.25)
 
 [node name="livingroom_3b" type="Node2D" unique_id=1548949849]
 script = ExtResource("1_dvb1i")
@@ -94,11 +98,32 @@ shape = SubResource("RectangleShape2D_hk5pt")
 position = Vector2(716.5, 418.5)
 shape = SubResource("RectangleShape2D_dvb1i")
 
+[node name="Couch" type="Area2D" parent="." unique_id=1436201245]
+position = Vector2(931, 325)
+script = ExtResource("5_k656b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Couch" unique_id=227616609]
+position = Vector2(-398.5, -27.625)
+shape = SubResource("RectangleShape2D_ra754")
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=1296684498]
+one_shot = true
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=1094261575]
+offset_left = 355.0
+offset_top = 352.0
+offset_right = 710.0
+offset_bottom = 401.0
+theme_override_font_sizes/font_size = 25
+
 [connection signal="body_entered" from="door_livingroom3b_bedroom3f" to="door_livingroom3b_bedroom3f" method="_on_body_entered"]
 [connection signal="body_exited" from="door_livingroom3b_bedroom3f" to="door_livingroom3b_bedroom3f" method="_on_body_exited"]
 [connection signal="body_entered" from="door_livingroom3b_nest3a" to="door_livingroom3b_nest3a" method="_on_body_entered"]
 [connection signal="body_exited" from="door_livingroom3b_nest3a" to="door_livingroom3b_nest3a" method="_on_body_exited"]
 [connection signal="body_entered" from="door_livingroom3b_library3c" to="door_livingroom3b_library3c" method="_on_body_entered"]
 [connection signal="body_exited" from="door_livingroom3b_library3c" to="door_livingroom3b_library3c" method="_on_body_exited"]
+[connection signal="body_entered" from="Couch" to="Couch" method="_on_body_entered"]
+[connection signal="body_exited" from="Couch" to="Couch" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight" method="_on_hide_text_timer_timeout"]
 
 [editable path="Dwight"]

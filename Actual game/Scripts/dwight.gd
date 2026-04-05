@@ -4,7 +4,7 @@ class_name Dwight
 
 @onready var game_manager: Node2D = %"Game Manager"
 
-const SPEED = 300.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 var is_hiding: bool = false
@@ -78,3 +78,7 @@ func show_hide_text(message: String) -> void:
 
 func _on_hide_text_timer_timeout() -> void:
 	hide_text_label.visible = false
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.

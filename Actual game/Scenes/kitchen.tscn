@@ -111,17 +111,28 @@ position = Vector2(393, 236)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1335422924]
 stream = ExtResource("5_2eoki")
 
-[node name="Cabinet" type="Area2D" parent="." unique_id=2068679848]
+[node name="Oven" type="Area2D" parent="." unique_id=2068679848]
 position = Vector2(446, 322)
 script = ExtResource("6_oavsw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabinet" unique_id=262035472]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Oven" unique_id=262035472]
 position = Vector2(-186, -35)
 shape = SubResource("RectangleShape2D_oqjef")
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=276051165]
+offset_left = 151.0
+offset_top = 364.0
+offset_right = 376.0
+offset_bottom = 399.0
+theme_override_font_sizes/font_size = 25
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=237809237]
+one_shot = true
 
 [connection signal="body_entered" from="door_2_2a" to="door_2_2a" method="_on_body_entered"]
 [connection signal="body_exited" from="door_2_2a" to="door_2_2a" method="_on_body_exited"]
 [connection signal="body_entered" from="door_2_E" to="door_2_E" method="_on_body_entered"]
 [connection signal="body_exited" from="door_2_E" to="door_2_E" method="_on_body_exited"]
-[connection signal="body_entered" from="Cabinet" to="Cabinet" method="_on_body_entered"]
-[connection signal="body_exited" from="Cabinet" to="Cabinet" method="_on_body_exited"]
+[connection signal="body_entered" from="Oven" to="Oven" method="_on_body_entered"]
+[connection signal="body_exited" from="Oven" to="Oven" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight2" method="_on_timer_timeout"]

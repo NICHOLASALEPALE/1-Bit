@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cy3m04xgb3snc" path="res://Actual game/Assets/nestroombg.png" id="1_s036n"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="2_mdcy5"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_qinog"]
+[ext_resource type="Script" uid="uid://gafp1se2qivs" path="res://Actual game/Scripts/tree.gd" id="5_1gjvq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdcy5"]
 atlas = ExtResource("1_s036n")
@@ -35,6 +36,9 @@ size = Vector2(82, 248.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qqo6s"]
 size = Vector2(87, 186)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1fhh"]
+size = Vector2(277, 263)
 
 [node name="nest_3a" type="Node2D" unique_id=7117616]
 script = ExtResource("1_qqo6s")
@@ -105,9 +109,31 @@ z_index = 4
 position = Vector2(-6, -2)
 shape = SubResource("RectangleShape2D_qqo6s")
 
+[node name="Tree" type="Area2D" parent="." unique_id=1429274901]
+position = Vector2(931, 325)
+script = ExtResource("5_1gjvq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree" unique_id=964340105]
+position = Vector2(-121, -66)
+shape = SubResource("RectangleShape2D_n1fhh")
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=653500691]
+one_shot = true
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=1341826642]
+visible = false
+offset_left = 488.0
+offset_top = 230.0
+offset_right = 893.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 20
+
 [connection signal="body_entered" from="door_nest3a_livingroom_3b" to="door_nest3a_livingroom_3b" method="_on_body_entered"]
 [connection signal="body_exited" from="door_nest3a_livingroom_3b" to="door_nest3a_livingroom_3b" method="_on_body_exited"]
 [connection signal="body_entered" from="door_nest3a_hall3" to="door_nest3a_hall3" method="_on_body_entered"]
 [connection signal="body_exited" from="door_nest3a_hall3" to="door_nest3a_hall3" method="_on_body_exited"]
+[connection signal="body_entered" from="Tree" to="Tree" method="_on_body_entered"]
+[connection signal="body_exited" from="Tree" to="Tree" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight" method="_on_hide_text_timer_timeout"]
 
 [editable path="Dwight"]

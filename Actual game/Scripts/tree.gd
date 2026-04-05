@@ -1,6 +1,7 @@
 extends Area2D
 
-@export var hide_message: String = "You hid in the oven."
+@export var hide_message: String = "You hid behind the 
+mantis infested tree."
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Dwight"):

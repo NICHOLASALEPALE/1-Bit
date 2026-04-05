@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c7nuis1xmw6ty" path="res://Actual game/Scripts/bedrom_3f.gd" id="1_hx61m"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_hx61m"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_34yk3"]
+[ext_resource type="Script" uid="uid://dsnwcyf7cqyby" path="res://Actual game/Scripts/bed.gd" id="5_34yk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbggg"]
 size = Vector2(1443, 29)
@@ -19,6 +20,9 @@ size = Vector2(70, 226)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx61m"]
 size = Vector2(190, 148.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxqbd"]
+size = Vector2(145, 154.25)
 
 [node name="bedrom_3f" type="Node2D" unique_id=1570299189]
 script = ExtResource("1_hx61m")
@@ -85,7 +89,28 @@ position = Vector2(834, 304)
 position = Vector2(11, 20)
 shape = SubResource("RectangleShape2D_hx61m")
 
+[node name="Bed" type="Area2D" parent="." unique_id=554017540]
+position = Vector2(931, 325)
+script = ExtResource("5_34yk3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed" unique_id=915149429]
+position = Vector2(-231, 8)
+shape = SubResource("RectangleShape2D_dxqbd")
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=54344089]
+one_shot = true
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=563534043]
+offset_left = 517.0
+offset_top = 202.0
+offset_right = 965.0
+offset_bottom = 249.0
+theme_override_font_sizes/font_size = 25
+
 [connection signal="body_entered" from="door_bedroom3f_livingroom3b" to="door_bedroom3f_livingroom3b" method="_on_body_entered"]
 [connection signal="body_exited" from="door_bedroom3f_livingroom3b" to="door_bedroom3f_livingroom3b" method="_on_body_exited"]
+[connection signal="body_entered" from="Bed" to="Bed" method="_on_body_entered"]
+[connection signal="body_exited" from="Bed" to="Bed" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight" method="_on_hide_text_timer_timeout"]
 
 [editable path="Dwight"]

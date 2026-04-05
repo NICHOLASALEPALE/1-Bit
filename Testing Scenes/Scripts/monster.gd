@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 400.0
-@export var walk_speed: float = 150.0
+@export var walk_speed: float = 175.0
 @export var move_direction: int = 1
 
 var player: Node2D = null

@@ -14,7 +14,7 @@ func _ready() -> void:
 
 	GameManager.player_current_room = room_tag
 
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	print("player in " + GameManager.player_current_room)
 
 	if GameManager.enemy_is_in_player_room():

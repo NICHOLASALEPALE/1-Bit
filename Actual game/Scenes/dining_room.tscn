@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_6ybij"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_t4cla"]
 [ext_resource type="AudioStream" uid="uid://d3q6ojx4qtp72" path="res://Actual game/Music/DoorSFX.mp3" id="5_6ybij"]
+[ext_resource type="Script" uid="uid://ctla0x5fuukgi" path="res://Actual game/Scripts/table.gd" id="6_k6a3m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7k41q"]
 atlas = ExtResource("1_6fhbr")
@@ -43,6 +44,9 @@ size = Vector2(87, 186)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fhbr"]
 size = Vector2(82, 248.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utiv0"]
+size = Vector2(164, 82)
 
 [node name="room_2a" type="Node2D" unique_id=284065715]
 script = ExtResource("1_t4cla")
@@ -93,5 +97,26 @@ shape = SubResource("RectangleShape2D_6fhbr")
 [node name="door sounds" type="AudioStreamPlayer2D" parent="." unique_id=1046623586]
 stream = ExtResource("5_6ybij")
 
+[node name="Table" type="Area2D" parent="." unique_id=1081956819]
+position = Vector2(446, 322)
+script = ExtResource("6_k6a3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table" unique_id=737310109]
+position = Vector2(-186, -35)
+shape = SubResource("RectangleShape2D_utiv0")
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=1500565561]
+one_shot = true
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=1443829146]
+offset_left = 126.0
+offset_top = 201.0
+offset_right = 428.0
+offset_bottom = 236.0
+theme_override_font_sizes/font_size = 25
+
 [connection signal="body_entered" from="door_2a_2" to="door_2a_2" method="_on_body_entered"]
 [connection signal="body_exited" from="door_2a_2" to="door_2a_2" method="_on_body_exited"]
+[connection signal="body_entered" from="Table" to="Table" method="_on_body_entered"]
+[connection signal="body_exited" from="Table" to="Table" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight" method="_on_hide_text_timer_timeout"]
