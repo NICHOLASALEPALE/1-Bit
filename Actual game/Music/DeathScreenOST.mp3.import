@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yei18yp1xr51"
+path="res://.godot/imported/DeathScreenOST.mp3-8d1dc1226a06976838a2d1a188d562ab.mp3str"
+
+[deps]
+
+source_file="res://Actual game/Music/DeathScreenOST.mp3"
+dest_files=["res://.godot/imported/DeathScreenOST.mp3-8d1dc1226a06976838a2d1a188d562ab.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
