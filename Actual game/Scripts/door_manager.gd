@@ -6,6 +6,7 @@ func _ready() -> void:
 	door_sound_player = AudioStreamPlayer.new()
 	door_sound_player.stream = preload("res://Actual game/Music/DoorSFX.mp3")
 	add_child(door_sound_player)
+	door_sound_player.volume_db = -10
 
 func Go_To_Door(Scene_Path:String, Door_Name:String) -> void:
 	get_tree().change_scene_to_file(Scene_Path)

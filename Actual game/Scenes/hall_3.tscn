@@ -73,7 +73,7 @@ z_index = 4
 position = Vector2(1116, 256)
 script = ExtResource("2_deu7d")
 Scene = "uid://caoqn1f65ojjo"
-Door_Name = "door_2_E"
+Door_Name = "door_nest3a_hall3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_hall3_nest3a" unique_id=496526868]
 z_index = 4
