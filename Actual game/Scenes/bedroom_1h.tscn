@@ -21,7 +21,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_16335")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("2_2pptj")]
-position = Vector2(288, -149)
+position = Vector2(283, -234)
 
 [node name="AmimatedSprite2D" parent="Dwight" index="0" unique_id=1387078225]
 position = Vector2(-8, -12.5)
@@ -47,7 +47,7 @@ shape = SubResource("RectangleShape2D_mjk4m")
 z_index = 4
 position = Vector2(344, 255)
 script = ExtResource("3_mqlj7")
-Scene = "uid://dnbvi8y3khao2"
+Scene = "uid://d26f77abvp43j"
 Door_Name = "door_secretbath1j_bedroom1h"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedrom1h_secretbath1j" unique_id=1257645887]
@@ -57,9 +57,9 @@ shape = SubResource("RectangleShape2D_5mo2x")
 
 [node name="door_bedroom1h_bedroom1i" type="Area2D" parent="." unique_id=1890926572 groups=["Door"]]
 z_index = 4
-position = Vector2(94, 252)
+position = Vector2(101, 278)
 script = ExtResource("3_mqlj7")
-Scene = "uid://cxk2aw0ph8rvk"
+Scene = "uid://cu5mrdysj7wau"
 Door_Name = "door_bedroom1i_bedroom1h"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedroom1h_bedroom1i" unique_id=1550894472]
