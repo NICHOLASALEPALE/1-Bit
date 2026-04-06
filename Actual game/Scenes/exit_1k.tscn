@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://gxw6pbkweb5q" path="res://Actual game/Scripts/exit_1k.gd" id="1_62ae8"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_efsan"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_5xafn"]
+[ext_resource type="Script" uid="uid://d4cijas4w7sg5" path="res://Actual game/Scripts/exit.gd" id="5_uhqqj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efsan"]
 size = Vector2(1443, 29)
@@ -13,6 +14,9 @@ size = Vector2(157, 279)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62ae8"]
 size = Vector2(121, 231.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uauud"]
+size = Vector2(224.75, 90.125)
 
 [node name="exit_1k" type="Node2D" unique_id=1024745668]
 script = ExtResource("1_62ae8")
@@ -67,7 +71,27 @@ position = Vector2(-1, -6.5)
 position = Vector2(268, 218)
 zoom = Vector2(2.4, 1.5)
 
+[node name="Exit" type="Area2D" parent="." unique_id=1820393324]
+position = Vector2(931, 325)
+script = ExtResource("5_uhqqj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1356618653]
+position = Vector2(-632.375, -86)
+shape = SubResource("RectangleShape2D_uauud")
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=781059730]
+one_shot = true
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=1277867682]
+offset_left = 90.0
+offset_top = 351.0
+offset_right = 497.0
+offset_bottom = 399.0
+theme_override_font_sizes/font_size = 25
+
 [connection signal="body_entered" from="door_exit1k_secretbath1j" to="door_exit1k_secretbath1j" method="_on_body_entered"]
 [connection signal="body_exited" from="door_exit1k_secretbath1j" to="door_exit1k_secretbath1j" method="_on_body_exited"]
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
+[connection signal="body_exited" from="Exit" to="Exit" method="_on_body_exited"]
 
 [editable path="Dwight"]

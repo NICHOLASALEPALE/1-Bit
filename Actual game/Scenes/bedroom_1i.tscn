@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_fvqcu"]
 [ext_resource type="Script" uid="uid://dsnwcyf7cqyby" path="res://Actual game/Scripts/bed.gd" id="4_83teh"]
 [ext_resource type="Script" uid="uid://covneq74njra0" path="res://Actual game/Scripts/locked_door.gd" id="5_aj1jb"]
-[ext_resource type="PackedScene" uid="uid://c81j7tjjclsdg" path="res://Actual game/Scenes/music_manager.tscn" id="7_cu1pr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpwg2"]
 size = Vector2(157, 279)
@@ -102,8 +101,6 @@ offset_top = 29.0
 offset_right = 497.0
 offset_bottom = 70.0
 theme_override_font_sizes/font_size = 25
-
-[node name="music_manager" parent="." unique_id=1292220180 instance=ExtResource("7_cu1pr")]
 
 [connection signal="body_entered" from="door_bedroom1i_bedroom1h" to="door_bedroom1i_bedroom1h" method="_on_body_entered"]
 [connection signal="body_exited" from="door_bedroom1i_bedroom1h" to="door_bedroom1i_bedroom1h" method="_on_body_exited"]

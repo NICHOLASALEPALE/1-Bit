@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d2xgipqd1kyp1"]
+
+[ext_resource type="Texture2D" uid="uid://xt4rfgm756kt" path="res://Actual game/Assets/Ending_bg.png" id="1_c3e2w"]
+[ext_resource type="AudioStream" uid="uid://d13saqti2jf4u" path="res://Actual game/Music/EndingOST.mp3" id="2_rmr6w"]
+
+[node name="ending" type="Node2D" unique_id=2146464474]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1607986234]
+position = Vector2(268, 218)
+scale = Vector2(3, 3)
+texture = ExtResource("1_c3e2w")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=524642135]
+position = Vector2(268, 218)
+zoom = Vector2(2.4, 1.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=179605946]
+stream = ExtResource("2_rmr6w")
+autoplay = true
+parameters/looping = true
+
+[node name="Label" type="Label" parent="." unique_id=1480988000]
+offset_left = 27.0
+offset_top = 270.0
+offset_right = 507.0
+offset_bottom = 432.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "You escaped into the light."
+horizontal_alignment = 1
+vertical_alignment = 1
