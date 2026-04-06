@@ -76,8 +76,8 @@ shape = SubResource("RectangleShape2D_getee")
 z_index = 4
 position = Vector2(91, 248)
 script = ExtResource("2_85lim")
-Scene = "uid://bn2pyp61ig5y1"
-Door_Name = "door_bed 1g_egg 1c"
+Scene = "uid://c2wj7l6owgxqk"
+Door_Name = "door_bedroom 1g_egg 1c"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_egg1c_bed1g" unique_id=1766953937]
 z_index = 4
