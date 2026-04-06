@@ -1,17 +1,118 @@
 [gd_scene format=3 uid="uid://thb60q24cqg7"]
 
 [ext_resource type="Script" uid="uid://b0c8ckhhg5w2h" path="res://Actual game/Scripts/dwight.gd" id="1_8eesn"]
-[ext_resource type="Texture2D" uid="uid://dlc2ft4bow2wg" path="res://Testing Scenes/Assets/Dwight_Placeholder.png" id="2_bawxu"]
+[ext_resource type="Texture2D" uid="uid://b8dlhjreqa6km" path="res://Actual game/Assets/characteridleleft.png" id="2_ij73k"]
+[ext_resource type="Texture2D" uid="uid://bj3osr8s4navv" path="res://Actual game/Assets/characteridleright.png" id="3_r68y4"]
+[ext_resource type="Texture2D" uid="uid://dcxedc5e8jm6j" path="res://Actual game/Assets/characterwalkleft.png" id="4_roqao"]
+[ext_resource type="Texture2D" uid="uid://sfd3pho8furg" path="res://Actual game/Assets/characterwalkright.png" id="5_dkv2k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6enpq"]
+atlas = ExtResource("2_ij73k")
+region = Rect2(0, 0, 26, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3bmu"]
+atlas = ExtResource("3_r68y4")
+region = Rect2(0, 0, 26, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8sll"]
+atlas = ExtResource("4_roqao")
+region = Rect2(0, 0, 26, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ubig"]
+atlas = ExtResource("4_roqao")
+region = Rect2(26, 0, 26, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2pmg"]
+atlas = ExtResource("4_roqao")
+region = Rect2(52, 0, 26, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub8v8"]
+atlas = ExtResource("4_roqao")
+region = Rect2(78, 0, 26, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7cco"]
+atlas = ExtResource("5_dkv2k")
+region = Rect2(0, 0, 26, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns0wu"]
+atlas = ExtResource("5_dkv2k")
+region = Rect2(26, 0, 26, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om2xn"]
+atlas = ExtResource("5_dkv2k")
+region = Rect2(52, 0, 26, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y4rx"]
+atlas = ExtResource("5_dkv2k")
+region = Rect2(78, 0, 26, 59)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flpox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6enpq")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3bmu")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8sll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ubig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2pmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub8v8")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7cco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns0wu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om2xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y4rx")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y15ja"]
-size = Vector2(78, 208.5)
+size = Vector2(31, 62)
 
 [node name="Dwight" type="CharacterBody2D" unique_id=1227741252 groups=["Dwight"]]
 script = ExtResource("1_8eesn")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=886479001]
-texture = ExtResource("2_bawxu")
+[node name="AmimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1387078225]
+position = Vector2(-84, -31.5)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_flpox")
+animation = &"walk_right"
+frame_progress = 0.43569994
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1377059615]
-position = Vector2(-79, -21)
+position = Vector2(-85.5, -30.5)
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_y15ja")
