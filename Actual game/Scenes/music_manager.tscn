@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c81j7tjjclsdg"]
+
+[ext_resource type="Script" uid="uid://d3f7lsa8f43au" path="res://Actual game/Scripts/music_manager.gd" id="1_b3u2k"]
+[ext_resource type="AudioStream" uid="uid://beq5blvhaw6oh" path="res://Actual game/Music/Mansion1.mp3" id="1_kc7s1"]
+
+[node name="music_manager" type="Node2D" unique_id=1292220180]
+script = ExtResource("1_b3u2k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1042928786]
+stream = ExtResource("1_kc7s1")
+autoplay = true
+parameters/looping = false

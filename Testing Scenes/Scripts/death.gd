@@ -11,4 +11,5 @@ func _on_body_entered(body: Node2D) -> void:
 		print("Player touched death area.")
 		GameManager.death = true
 		get_tree().change_scene_to_file("res://Testing Scenes/Scenes/lose_screen.tscn")
+		music_manager.stop_music()
 		

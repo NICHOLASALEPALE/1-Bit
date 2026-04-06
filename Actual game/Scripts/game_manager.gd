@@ -80,6 +80,7 @@ func add_point() -> void:
 	score += 1
 	update_score_label()
 
+
 func add_turn(amount: int = 1) -> void:
 	turns += amount
 	enemy_progress += amount

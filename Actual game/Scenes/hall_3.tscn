@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dh5vn7yh02i04" path="res://Actual game/Assets/Hall3bg.png" id="1_jjydm"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_deu7d"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_deu7d"]
+[ext_resource type="PackedScene" uid="uid://c81j7tjjclsdg" path="res://Actual game/Scenes/music_manager.tscn" id="5_2myb6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_deu7d"]
 size = Vector2(87, 186)
@@ -79,6 +80,8 @@ Door_Name = "door_nest3a_hall3"
 z_index = 4
 position = Vector2(109, -2)
 shape = SubResource("RectangleShape2D_1h110")
+
+[node name="music_manager" parent="." unique_id=1292220180 instance=ExtResource("5_2myb6")]
 
 [connection signal="body_entered" from="door_hall3_E" to="door_hall3_E" method="_on_body_entered"]
 [connection signal="body_exited" from="door_hall3_E" to="door_hall3_E" method="_on_body_exited"]

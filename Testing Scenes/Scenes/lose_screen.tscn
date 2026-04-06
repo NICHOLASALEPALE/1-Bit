@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://bfbypudjo37ah"]
 
+[ext_resource type="Script" uid="uid://b4tixe0d7ux81" path="res://Testing Scenes/Scripts/lose_screen.gd" id="1_7qqho"]
+[ext_resource type="AudioStream" uid="uid://yei18yp1xr51" path="res://Actual game/Music/DeathScreenOST.mp3" id="1_pp37i"]
+
 [node name="Lose Screen" type="Node2D" unique_id=117319930]
+script = ExtResource("1_7qqho")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1267448488]
 position = Vector2(577, 324)
@@ -12,3 +16,7 @@ offset_right = 822.0
 offset_bottom = 432.0
 theme_override_font_sizes/font_size = 50
 text = "Deaded"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=234060507]
+stream = ExtResource("1_pp37i")
+autoplay = true

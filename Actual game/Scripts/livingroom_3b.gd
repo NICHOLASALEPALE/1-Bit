@@ -13,6 +13,7 @@ func _ready() -> void:
 	print("Enemy bool seen by room:", GameManager.enemy_is_in_player_room())
 
 	GameManager.player_current_room = room_tag
+	music_manager.update_music_for_current_scene()
 
 	await get_tree().create_timer(1.5).timeout
 	print("player in " + GameManager.player_current_room)

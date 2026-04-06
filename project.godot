@@ -20,6 +20,7 @@ config/icon="res://Testing Scenes/Assets/icon.svg"
 NavigationManager="*uid://bw8yklqtgggfr"
 GameManager="*uid://ckawl1lcpngxh"
 Door_Manager="*uid://iavtfodyaud5"
+music_manager="*uid://okar5c0rg4ey"
 
 [global_group]
 
