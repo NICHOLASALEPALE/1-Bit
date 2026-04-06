@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://cma1enx2ne1mk"]
 
+[ext_resource type="Script" uid="uid://bews28l5fpvmb" path="res://Actual game/Scripts/introduction.gd" id="1_1kuab"]
 [ext_resource type="Texture2D" uid="uid://byxns6g6wpg3c" path="res://Actual game/Assets/Intro_bg.png" id="1_h0e7j"]
 [ext_resource type="AudioStream" uid="uid://cjxteknm6vrb5" path="res://Actual game/Music/IntroOST.mp3" id="2_nminc"]
+[ext_resource type="Texture2D" uid="uid://c8d06agrffyq3" path="res://Actual game/Assets/arrowkeys sprite.png" id="3_1l663"]
+[ext_resource type="Texture2D" uid="uid://dw3q0of1fnm5u" path="res://Actual game/Assets/zkeysprite.png" id="4_1kuab"]
+[ext_resource type="Texture2D" uid="uid://bbkl5ly5ggss0" path="res://Actual game/Assets/xkeysprite.png" id="5_2v0ku"]
 
 [node name="Introduction" type="Node2D" unique_id=1152637418]
+script = ExtResource("1_1kuab")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=651146443]
 position = Vector2(268, 218)
@@ -14,26 +19,62 @@ texture = ExtResource("1_h0e7j")
 position = Vector2(268, 218)
 zoom = Vector2(2.4, 1.5)
 
-[node name="Label" type="Label" parent="." unique_id=1260714250]
+[node name="label1" type="Label" parent="." unique_id=1260714250]
+visible = false
 offset_left = 285.0
 offset_top = 139.0
 offset_right = 508.0
 offset_bottom = 232.0
 theme_override_font_sizes/font_size = 10
-text = "Little Bug - 
-\"Hey mister! I heard there's some crazy loot and treasure and enticing items in that there mansion!!! I would get my mandibles on it if I could but I'm just too little itty bitty... "
+text = "Little Bug - \"Hey mister! I heard there's something in that there mansion!!! I would get my mandibles on it if I could but I'm just too little itty bitty... "
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="." unique_id=1778098785]
+[node name="label2" type="Label" parent="." unique_id=1778098785]
+visible = false
 offset_left = 284.0
 offset_top = 273.0
 offset_right = 507.0
 offset_bottom = 345.0
 theme_override_font_sizes/font_size = 10
-text = "No one lives there anymore so I'm sure no one will mind you walking in and retrieving whatever was left! Teehee I'm excited just thinking about it. Anywayy good luck~!\""
+text = "No one lives there anymore so I'm sure no one will mind you walking in and checking it out if you want! Teehee I'm excited just thinking about it. Anywayy good luck~!\""
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=929557880]
 stream = ExtResource("2_nminc")
 autoplay = true
-parameters/looping = false
+parameters/looping = true
+
+[node name="control_3" type="Sprite2D" parent="." unique_id=340333644]
+position = Vector2(387.00003, 337)
+scale = Vector2(2.1900003, 2.1900003)
+texture = ExtResource("3_1l663")
+
+[node name="control_1" type="Sprite2D" parent="." unique_id=1633613702]
+position = Vector2(331, 166)
+scale = Vector2(2.2900007, 2.27)
+texture = ExtResource("4_1kuab")
+
+[node name="control_2" type="Sprite2D" parent="." unique_id=477050580]
+position = Vector2(332, 231)
+scale = Vector2(2.22, 2.22)
+texture = ExtResource("5_2v0ku")
+
+[node name="control_4" type="Label" parent="." unique_id=335145673]
+offset_left = 363.75
+offset_top = 136.0
+offset_right = 499.75
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 20
+text = "Interact"
+vertical_alignment = 1
+
+[node name="control_5" type="Label" parent="." unique_id=270368361]
+offset_left = 365.0
+offset_top = 198.0
+offset_right = 501.0
+offset_bottom = 259.0
+theme_override_font_sizes/font_size = 20
+text = "Open Doors"
+vertical_alignment = 1
