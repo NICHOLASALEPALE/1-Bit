@@ -27,7 +27,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_wdesl")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_q6rbs")]
-position = Vector2(347, 181)
+position = Vector2(300, -271)
 
 [node name="Sprite2D" parent="Dwight" index="0" unique_id=886479001]
 position = Vector2(80, 14)

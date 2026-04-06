@@ -3,6 +3,7 @@ extends Area2D
 var player_in_range: Dwight = null
 @onready var room = get_parent()
 @onready var background: Sprite2D = $"../Background"
+@onready var bird_free: Sprite2D = $"../BirdFree"
 
 #var bg_freed = preload("res://path_to/birdroom3i_bg2.png")
 
@@ -21,4 +22,5 @@ func _process(delta: float) -> void:
 		else:
 			player_in_range.show_interact_text("Be free.")
 			GameManager.bird_freed = true
+			bird_free.z_index = -3
 			#background.texture = bg_freed

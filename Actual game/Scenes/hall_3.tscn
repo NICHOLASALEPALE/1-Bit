@@ -29,8 +29,8 @@ texture = ExtResource("1_jjydm")
 z_index = 4
 position = Vector2(85, 259)
 script = ExtResource("2_deu7d")
-Scene = "uid://bal7c60ujqqby"
-Door_Name = "door_2_E"
+Scene = "uid://b7j6jrh0cd5qw"
+Door_Name = "door_e_hall_3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_hall3_E" unique_id=1762252330]
 z_index = 4

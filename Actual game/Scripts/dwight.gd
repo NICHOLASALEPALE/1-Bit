@@ -74,7 +74,6 @@ func toggle_hide() -> void:
 func has_chosen() -> void:
 	if chosen == true:
 		show_hide_text(current_hide_message)
-		print("workiing")
 
 func show_hide_text(message: String) -> void:
 	if hide_text_label == null:

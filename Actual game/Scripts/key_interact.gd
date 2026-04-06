@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		GameManager.has_key = true
 		#player_in_range.show_interact_text("You got key.")
 		GameManager.chosen = true
-		GameManager.show_item_text("You picked up a key.")
+		player_in_range.show_interact_text("You got key.")
 	
 	if GameManager.chosen == true:
 		queue_free()

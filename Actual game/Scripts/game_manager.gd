@@ -21,23 +21,27 @@ var chosen: bool = false
 var room_order: Array[String] = [
 	"room_2",
 	"room_2a",
+	"entrance",
 	"hall_3",
 	"nest_3a",
 	"livingroom_3b",
 	"bedrom_3f",
 	"library_3c",
 	"birdroom_3i"
+	
 ]
 
 var room_costs := {
 	"room_2": 1,
 	"Room_2a": 1,
+	"entrance": 1,
 	"hall_3": 2,
 	"nest_3a": 2,
 	"livingroom_3b": 1,
 	"bedrom_3f": 2,
 	"library_3c": 1,
 	"birdroom_3i": 1
+	
 }
 
 var message_queue: Array[String] = []

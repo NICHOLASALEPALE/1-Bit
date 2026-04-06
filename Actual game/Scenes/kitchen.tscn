@@ -77,8 +77,8 @@ shape = SubResource("RectangleShape2D_oavsw")
 [node name="door_2_E" type="Area2D" parent="." unique_id=1941662413 groups=["Door"]]
 position = Vector2(454, 274)
 script = ExtResource("3_cirs3")
-Scene = "uid://brsts3y1atj88"
-Door_Name = "door_hall3_E"
+Scene = "uid://b7j6jrh0cd5qw"
+Door_Name = "door_e_room_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_2_E" unique_id=2138776686]
 position = Vector2(66, 2)
@@ -120,13 +120,14 @@ position = Vector2(-186, -35)
 shape = SubResource("RectangleShape2D_oqjef")
 
 [node name="HideTextLabel" type="Label" parent="." unique_id=276051165]
+visible = false
 offset_left = 151.0
 offset_top = 364.0
 offset_right = 376.0
 offset_bottom = 399.0
 theme_override_font_sizes/font_size = 25
 
-[node name="HideTextTimer" type="Timer" parent="." unique_id=237809237]
+[node name="HideTextTimer" type="Timer" parent="." unique_id=505920525]
 one_shot = true
 
 [connection signal="body_entered" from="door_2_2a" to="door_2_2a" method="_on_body_entered"]
@@ -135,4 +136,4 @@ one_shot = true
 [connection signal="body_exited" from="door_2_E" to="door_2_E" method="_on_body_exited"]
 [connection signal="body_entered" from="Oven" to="Oven" method="_on_body_entered"]
 [connection signal="body_exited" from="Oven" to="Oven" method="_on_body_exited"]
-[connection signal="timeout" from="HideTextTimer" to="Dwight2" method="_on_timer_timeout"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight2" method="_on_hide_text_timer_timeout"]

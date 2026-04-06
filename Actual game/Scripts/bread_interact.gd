@@ -20,6 +20,8 @@ func _process(delta: float) -> void:
 	if player_in_range != null and Input.is_action_just_pressed("ui_select"):
 		#player_in_range.show_interact_text("Because bread tastes better than key.")
 		GameManager.chosen = true
+		player_in_range.show_interact_text("Because bread tastes 
+		better than key.")
 		#GameManager.show_item_text("Because bread tastes better than key.")
 		
 	if GameManager.chosen == true:

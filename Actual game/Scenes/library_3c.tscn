@@ -47,30 +47,30 @@ shape = SubResource("RectangleShape2D_gyonp")
 
 [node name="door_library3c_livingroom3b" type="Area2D" parent="." unique_id=2071999030 groups=["Door"]]
 z_index = 4
-position = Vector2(692, 355)
+position = Vector2(398, 249)
 script = ExtResource("2_nwv36")
 Scene = "uid://c61y3lgs4tnvw"
 Door_Name = "door_livingroom3b_library3c"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_library3c_livingroom3b" unique_id=758937185]
 z_index = 4
-position = Vector2(-281, -102)
+position = Vector2(8, 3)
 shape = SubResource("RectangleShape2D_jy5sv")
 
-[node name="door_bedroom3f_birdroom3i" type="Area2D" parent="." unique_id=578988664 groups=["Door"]]
+[node name="door_library3c_birdroom3i" type="Area2D" parent="." unique_id=578988664 groups=["Door"]]
 z_index = 4
-position = Vector2(369, 557)
+position = Vector2(89, 263)
 script = ExtResource("2_nwv36")
-Scene = "uid://bq308ja6eswli"
-Door_Name = "door_birdroom3i_library3c"
+Scene = "uid://c72vnod30idnw"
+Door_Name = "door_birdroom3i_library3c "
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedroom3f_birdroom3i" unique_id=174330501]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_library3c_birdroom3i" unique_id=174330501]
 z_index = 4
-position = Vector2(-16, 0)
+position = Vector2(-47, 0)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_p88re")]
-position = Vector2(1154, 178)
+position = Vector2(392, -201)
 
 [node name="Camera2D2" type="Camera2D" parent="." unique_id=1185978009]
 position = Vector2(268, 218)
@@ -78,5 +78,5 @@ zoom = Vector2(2.4, 1.5)
 
 [connection signal="body_entered" from="door_library3c_livingroom3b" to="door_library3c_livingroom3b" method="_on_body_entered"]
 [connection signal="body_exited" from="door_library3c_livingroom3b" to="door_library3c_livingroom3b" method="_on_body_exited"]
-[connection signal="body_entered" from="door_bedroom3f_birdroom3i" to="door_bedroom3f_birdroom3i" method="_on_body_entered"]
-[connection signal="body_exited" from="door_bedroom3f_birdroom3i" to="door_bedroom3f_birdroom3i" method="_on_body_exited"]
+[connection signal="body_entered" from="door_library3c_birdroom3i" to="door_library3c_birdroom3i" method="_on_body_entered"]
+[connection signal="body_exited" from="door_library3c_birdroom3i" to="door_library3c_birdroom3i" method="_on_body_exited"]
