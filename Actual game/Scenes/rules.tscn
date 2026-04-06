@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dv5x0jqwve10h"]
+
+[ext_resource type="Texture2D" uid="uid://byxns6g6wpg3c" path="res://Actual game/Assets/Intro_bg.png" id="1_aepy8"]
+[ext_resource type="AudioStream" uid="uid://cjxteknm6vrb5" path="res://Actual game/Music/IntroOST.mp3" id="2_gaqvx"]
+[ext_resource type="Texture2D" uid="uid://c8d06agrffyq3" path="res://Actual game/Assets/arrowkeys sprite.png" id="3_ht51v"]
+[ext_resource type="Texture2D" uid="uid://dw3q0of1fnm5u" path="res://Actual game/Assets/zkeysprite.png" id="4_6mj6e"]
+
+[node name="Node2D" type="Node2D" unique_id=102729990]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=873642887]
+position = Vector2(268, 218)
+scale = Vector2(3, 3)
+texture = ExtResource("1_aepy8")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=131542061]
+position = Vector2(268, 218)
+zoom = Vector2(2.4, 1.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2138463443]
+stream = ExtResource("2_gaqvx")
+autoplay = true
+parameters/looping = false
+
+[node name="ArrowkeysSprite" type="Sprite2D" parent="." unique_id=1839296548]
+position = Vector2(393, 343)
+scale = Vector2(2.14, 2.14)
+texture = ExtResource("3_ht51v")
+
+[node name="Zkeysprite" type="Sprite2D" parent="." unique_id=1597743318]
+position = Vector2(337, 233.00002)
+scale = Vector2(2.1900012, 2.1900012)
+texture = ExtResource("4_6mj6e")

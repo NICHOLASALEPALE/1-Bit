@@ -1,10 +1,39 @@
 [gd_scene format=3 uid="uid://cma1enx2ne1mk"]
 
-[ext_resource type="Texture2D" uid="uid://dag74ucqeakvi" path="res://Actual game/Assets/IntroDialogue.png" id="1_r47b3"]
+[ext_resource type="Texture2D" uid="uid://byxns6g6wpg3c" path="res://Actual game/Assets/Intro_bg.png" id="1_h0e7j"]
+[ext_resource type="AudioStream" uid="uid://cjxteknm6vrb5" path="res://Actual game/Music/IntroOST.mp3" id="2_nminc"]
 
-[node name="Node2D" type="Node2D" unique_id=65859335]
+[node name="Introduction" type="Node2D" unique_id=1152637418]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1644064423]
-position = Vector2(598, 212.50002)
-scale = Vector2(1.0958334, 1.0958334)
-texture = ExtResource("1_r47b3")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=651146443]
+position = Vector2(268, 218)
+scale = Vector2(3, 3)
+texture = ExtResource("1_h0e7j")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=350722105]
+position = Vector2(268, 218)
+zoom = Vector2(2.4, 1.5)
+
+[node name="Label" type="Label" parent="." unique_id=1260714250]
+offset_left = 285.0
+offset_top = 139.0
+offset_right = 508.0
+offset_bottom = 232.0
+theme_override_font_sizes/font_size = 10
+text = "Little Bug - 
+\"Hey mister! I heard there's some crazy loot and treasure and enticing items in that there mansion!!! I would get my mandibles on it if I could but I'm just too little itty bitty... "
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=1778098785]
+offset_left = 284.0
+offset_top = 273.0
+offset_right = 507.0
+offset_bottom = 345.0
+theme_override_font_sizes/font_size = 10
+text = "No one lives there anymore so I'm sure no one will mind you walking in and retrieving whatever was left! Teehee I'm excited just thinking about it. Anywayy good luck~!\""
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=929557880]
+stream = ExtResource("2_nminc")
+autoplay = true
+parameters/looping = false

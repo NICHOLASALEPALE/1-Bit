@@ -2,12 +2,58 @@
 
 [ext_resource type="Script" uid="uid://b4tixe0d7ux81" path="res://Testing Scenes/Scripts/lose_screen.gd" id="1_7qqho"]
 [ext_resource type="AudioStream" uid="uid://yei18yp1xr51" path="res://Actual game/Music/DeathScreenOST.mp3" id="1_pp37i"]
+[ext_resource type="Texture2D" uid="uid://dahjnk70o0fkq" path="res://Actual game/Assets/deathscreen_bg.png" id="3_umqnb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pntv"]
+atlas = ExtResource("3_umqnb")
+region = Rect2(0, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd0jl"]
+atlas = ExtResource("3_umqnb")
+region = Rect2(160, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ptpn"]
+atlas = ExtResource("3_umqnb")
+region = Rect2(320, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxfec"]
+atlas = ExtResource("3_umqnb")
+region = Rect2(480, 0, 160, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3t33"]
+atlas = ExtResource("3_umqnb")
+region = Rect2(640, 0, 160, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2sneq"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pntv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd0jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ptpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxfec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3t33")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [node name="Lose Screen" type="Node2D" unique_id=117319930]
 script = ExtResource("1_7qqho")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1267448488]
-position = Vector2(577, 324)
 
 [node name="Label" type="Label" parent="." unique_id=1268795273]
 offset_left = 320.0
@@ -20,3 +66,15 @@ text = "Deaded"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=234060507]
 stream = ExtResource("1_pp37i")
 autoplay = true
+parameters/looping = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1550982610]
+position = Vector2(268, 218)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_2sneq")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=785424852]
+position = Vector2(268, 218)
+zoom = Vector2(2.4, 1.5)
