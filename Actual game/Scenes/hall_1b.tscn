@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://hwjdlb81qeql"]
 
 [ext_resource type="Texture2D" uid="uid://cfwkhcdn3jtvs" path="res://Actual game/Assets/Hallway1b_bg.png" id="1_767a0"]
+[ext_resource type="Script" uid="uid://cimjdjoqc5fnr" path="res://Actual game/Scripts/hall_1b.gd" id="1_vmodd"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_sbb2g"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_eg4v2"]
+[ext_resource type="Script" uid="uid://cyyvp88twq1rp" path="res://Actual game/Scripts/lamp.gd" id="5_geh7i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvfwb"]
 size = Vector2(87, 186)
@@ -16,7 +18,11 @@ size = Vector2(56, 225)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ksp1"]
 size = Vector2(1443, 29)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k58e0"]
+size = Vector2(114, 312)
+
 [node name="hall_1b" type="Node2D" unique_id=167108725]
+script = ExtResource("1_vmodd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1296923475]
 position = Vector2(720, 215)
@@ -84,9 +90,30 @@ limit_bottom = 425
 position = Vector2(716.5, 418.5)
 shape = SubResource("RectangleShape2D_3ksp1")
 
+[node name="lamp" type="Area2D" parent="." unique_id=1092499394]
+position = Vector2(931, 325)
+script = ExtResource("5_geh7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lamp" unique_id=1889724849]
+position = Vector2(211, -116)
+shape = SubResource("RectangleShape2D_k58e0")
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=2147026455]
+one_shot = true
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=580742223]
+offset_left = 1154.0
+offset_top = 148.0
+offset_right = 1331.0
+offset_bottom = 341.0
+theme_override_font_sizes/font_size = 25
+
 [connection signal="body_entered" from="door_hall 1b_egg1c" to="door_hall 1b_egg1c" method="_on_body_entered"]
 [connection signal="body_exited" from="door_hall 1b_egg1c" to="door_hall 1b_egg1c" method="_on_body_exited"]
 [connection signal="body_entered" from="door_hall 1b_outlet1a" to="door_hall 1b_outlet1a" method="_on_body_entered"]
 [connection signal="body_exited" from="door_hall 1b_outlet1a" to="door_hall 1b_outlet1a" method="_on_body_exited"]
+[connection signal="body_entered" from="lamp" to="lamp" method="_on_body_entered"]
+[connection signal="body_exited" from="lamp" to="lamp" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight" method="_on_hide_text_timer_timeout"]
 
 [editable path="Dwight"]

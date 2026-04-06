@@ -8,8 +8,8 @@ var enemy_progress: int = 0
 #@onready var item_text: Label = $ItemText
 
 
-var player_current_room: String = "room_2"
-var enemy_current_room: String = "room_2"
+var player_current_room: String = "entrance"
+var enemy_current_room: String = "room_2a"
 var death:bool = false
 
 var has_key: bool = false
@@ -19,8 +19,8 @@ var bread_taken: bool = false
 var chosen: bool = false
 
 var room_order: Array[String] = [
-	"room_2",
 	"room_2a",
+	"room_2",
 	"entrance",
 	"hall_3",
 	"nest_3a",
@@ -29,22 +29,39 @@ var room_order: Array[String] = [
 	"library_3c",
 	"birdroom_3i",
 	"study_1",
-	"outlet_1a"
+	"outlet_1a",
+	"hall_1b",
+	"egg_1c",
+	"bedroom_1g",
+	"bedroom_1h",
+	"bedroom_1i",
+	"secretbath_1j",
+	"exit_1k"
+	
 	
 ]
 
 var room_costs := {
+	"room_2a":1,
 	"room_2": 1,
-	"Room_2a": 1,
 	"entrance": 1,
-	"hall_3": 2,
-	"nest_3a": 2,
+	"hall_3": 1,
+	"nest_3a": 1,
 	"livingroom_3b": 1,
-	"bedrom_3f": 2,
+	"bedrom_3f": 1,
 	"library_3c": 1,
 	"birdroom_3i": 1,
 	"study_1": 1,
-	"outlet_1a": 1
+	"outlet_1a": 1,
+	"hall_1b": 1,
+	"egg_1c": 1,
+	"bedroom_1g": 1,
+	"bedroom_1h": 1,
+	"bedroom_1i": 1,
+	"secretbath_1j": 1,
+	"exit_1k": 1
+	
+	
 	
 }
 

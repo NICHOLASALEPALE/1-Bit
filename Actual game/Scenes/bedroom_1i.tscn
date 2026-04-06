@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cu5mrdysj7wau"]
 
 [ext_resource type="Texture2D" uid="uid://e41u7v78kcq2" path="res://Actual game/Assets/Bed1i_bg.png" id="1_3t3xr"]
+[ext_resource type="Script" uid="uid://dvogw5wxdv3u8" path="res://Actual game/Scripts/bedroom_1i.gd" id="1_fxhwo"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="2_x3t2a"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_fvqcu"]
 [ext_resource type="Script" uid="uid://dsnwcyf7cqyby" path="res://Actual game/Scripts/bed.gd" id="4_83teh"]
@@ -22,6 +23,7 @@ size = Vector2(99, 166)
 size = Vector2(197.5, 90.125)
 
 [node name="bedroom_1i" type="Node2D" unique_id=419438541]
+script = ExtResource("1_fxhwo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1012824430]
 position = Vector2(268, 218)

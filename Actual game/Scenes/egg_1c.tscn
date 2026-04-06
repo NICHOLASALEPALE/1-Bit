@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://duul0ubu2h0nn"]
 
 [ext_resource type="Texture2D" uid="uid://g2s1myr55otv" path="res://Actual game/Assets/Egg1c_bg.png" id="1_5o3gf"]
+[ext_resource type="Script" uid="uid://cqfudcsohgloj" path="res://Actual game/Scripts/egg_1c.gd" id="1_gu1tu"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_85lim"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_sn76e"]
 
@@ -53,6 +54,7 @@ size = Vector2(102, 225)
 size = Vector2(1443, 29)
 
 [node name="egg_1c" type="Node2D" unique_id=792164502]
+script = ExtResource("1_gu1tu")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=341861328]
 position = Vector2(268, 218)

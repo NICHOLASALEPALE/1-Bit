@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://nbihugh3lqta" path="res://Testing Scenes/Scripts/monster.gd" id="1_g0mdy"]
 [ext_resource type="Script" uid="uid://fxp4n55d1552" path="res://Testing Scenes/Scripts/death.gd" id="2_7d6kb"]
 [ext_resource type="Texture2D" uid="uid://dhrmhpv457bfa" path="res://Testing Scenes/Assets/April/attack/t01582.png" id="2_g0mdy"]
+[ext_resource type="Texture2D" uid="uid://cfvdo4gk11c88" path="res://Actual game/Assets/Mantiswalkleft.png" id="2_q7duv"]
 [ext_resource type="Texture2D" uid="uid://bfwgftpqjirk6" path="res://Testing Scenes/Assets/April/attack/t01585.png" id="3_ppmea"]
 [ext_resource type="Texture2D" uid="uid://b8qaa2ihma8yt" path="res://Testing Scenes/Assets/April/attack/t01588.png" id="4_c2122"]
 [ext_resource type="Texture2D" uid="uid://box0aygn5muip" path="res://Testing Scenes/Assets/April/attack/t01591.png" id="5_18b1t"]
@@ -19,8 +20,27 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7d6kb"]
 size = Vector2(25, 50)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0r4l"]
+atlas = ExtResource("2_q7duv")
+region = Rect2(0, 0, 83, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2sof"]
+atlas = ExtResource("2_q7duv")
+region = Rect2(83, 0, 83, 70)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_k3d7l"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0r4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2sof")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_dfc53")
@@ -41,7 +61,7 @@ animations = [{
 "texture": ExtResource("6_qo7mf")
 }],
 "loop": true,
-"name": &"Attack",
+"name": &"april_Attack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -64,16 +84,16 @@ animations = [{
 "texture": ExtResource("12_y32po")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"april_Idle",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfc53"]
-size = Vector2(91, 174)
+size = Vector2(262, 194)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwf77"]
-radius = 64.0
-height = 252.0
+radius = 96.0
+height = 270.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=874148842]
 script = ExtResource("1_g0mdy")
@@ -83,6 +103,7 @@ position = Vector2(3.5, 10)
 shape = SubResource("RectangleShape2D_7d6kb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1070583459]
+scale = Vector2(3.428571, 3.4285715)
 sprite_frames = SubResource("SpriteFrames_k3d7l")
 animation = &"Idle"
 autoplay = "Idle"
@@ -93,14 +114,14 @@ flip_h = true
 script = ExtResource("2_7d6kb")
 
 [node name="death cls" type="CollisionShape2D" parent="death" unique_id=411977490]
-position = Vector2(2.5, 10)
+position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_dfc53")
 
 [node name="vision" type="Area2D" parent="." unique_id=2102204242]
 script = ExtResource("14_7d6kb")
 
 [node name="vision cls" type="CollisionShape2D" parent="vision" unique_id=2019382834]
-position = Vector2(122, -5)
+position = Vector2(211, -7)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pwf77")
 
