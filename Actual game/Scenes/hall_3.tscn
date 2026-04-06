@@ -58,14 +58,14 @@ shape = SubResource("RectangleShape2D_0okny")
 position = Vector2(-122, -194)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=7613388]
-position = Vector2(1658, 436)
+position = Vector2(1640, 455)
 shape = SubResource("RectangleShape2D_2myb6")
 
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=376981110]
 position = Vector2(-61, -97)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1764047721]
-position = Vector2(-39, 338)
+position = Vector2(-23, 354)
 shape = SubResource("RectangleShape2D_2myb6")
 
 [node name="door_hall3_nest3a" type="Area2D" parent="." unique_id=2014905550 groups=["Door"]]

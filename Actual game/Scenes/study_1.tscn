@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://brkw6wg4yjn7r"]
 
+[ext_resource type="Script" uid="uid://cgo8y6otp8ehg" path="res://Actual game/Scripts/study_1.gd" id="1_un41v"]
 [ext_resource type="Texture2D" uid="uid://ccajbjeecc0l3" path="res://Actual game/Assets/study1_bg.png" id="1_xonsm"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_6yhh0"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_ickr5"]
+[ext_resource type="Script" uid="uid://ctla0x5fuukgi" path="res://Actual game/Scripts/table.gd" id="4_ui2am"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvfwb"]
 size = Vector2(87, 186)
@@ -16,7 +18,11 @@ size = Vector2(157, 279)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ar6p5"]
 size = Vector2(109, 160.75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un41v"]
+size = Vector2(195, 95)
+
 [node name="study_1" type="Node2D" unique_id=1244123192]
+script = ExtResource("1_un41v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=666733559]
 position = Vector2(268, 218)
@@ -38,8 +44,8 @@ shape = SubResource("RectangleShape2D_kvfwb")
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_ickr5")]
 position = Vector2(393, -704)
 
-[node name="Sprite2D" parent="Dwight" index="0" unique_id=886479001]
-position = Vector2(81, 43)
+[node name="AmimatedSprite2D" parent="Dwight" index="0" unique_id=1387078225]
+position = Vector2(8, -1)
 
 [node name="CollisionShape2D" parent="Dwight" index="1" unique_id=1377059615]
 position = Vector2(10, -2)
@@ -80,9 +86,31 @@ shape = SubResource("RectangleShape2D_ar6p5")
 position = Vector2(268, 218)
 zoom = Vector2(2.4, 1.5)
 
+[node name="Table" type="Area2D" parent="." unique_id=1783542738]
+position = Vector2(931, 325)
+script = ExtResource("4_ui2am")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table" unique_id=123639242]
+position = Vector2(-712.5, -38.5)
+shape = SubResource("RectangleShape2D_un41v")
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=1148837678]
+one_shot = true
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=1514750157]
+visible = false
+offset_left = 75.0
+offset_top = 27.0
+offset_right = 477.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 25
+
 [connection signal="body_entered" from="door_study 1_entrance 1" to="door_study 1_entrance 1" method="_on_body_entered"]
 [connection signal="body_exited" from="door_study 1_entrance 1" to="door_study 1_entrance 1" method="_on_body_exited"]
 [connection signal="body_entered" from="door_study1_outlet1a" to="door_study1_outlet1a" method="_on_body_entered"]
 [connection signal="body_exited" from="door_study1_outlet1a" to="door_study1_outlet1a" method="_on_body_exited"]
+[connection signal="body_entered" from="Table" to="Table" method="_on_body_entered"]
+[connection signal="body_exited" from="Table" to="Table" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight" method="_on_hide_text_timer_timeout"]
 
 [editable path="Dwight"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cma1enx2ne1mk"]
+
+[ext_resource type="Texture2D" uid="uid://dag74ucqeakvi" path="res://Actual game/Assets/IntroDialogue.png" id="1_r47b3"]
+
+[node name="Node2D" type="Node2D" unique_id=65859335]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1644064423]
+position = Vector2(598, 212.50002)
+scale = Vector2(1.0958334, 1.0958334)
+texture = ExtResource("1_r47b3")

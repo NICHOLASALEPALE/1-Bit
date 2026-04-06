@@ -44,14 +44,14 @@ limit_bottom = 425
 position = Vector2(-344, 556)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=2114602177]
-position = Vector2(1377, -377)
+position = Vector2(1351, -366)
 shape = SubResource("RectangleShape2D_4ucsd")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=55418118]
 position = Vector2(-283, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1238572639]
-position = Vector2(215, -102)
+position = Vector2(241, -108)
 shape = SubResource("RectangleShape2D_4ucsd")
 
 [node name="door_livingroom3b_bedroom3f" type="Area2D" parent="." unique_id=1499793468 groups=["Door"]]

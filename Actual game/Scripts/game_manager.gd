@@ -27,7 +27,9 @@ var room_order: Array[String] = [
 	"livingroom_3b",
 	"bedrom_3f",
 	"library_3c",
-	"birdroom_3i"
+	"birdroom_3i",
+	"study_1",
+	"outlet_1a"
 	
 ]
 
@@ -40,7 +42,9 @@ var room_costs := {
 	"livingroom_3b": 1,
 	"bedrom_3f": 2,
 	"library_3c": 1,
-	"birdroom_3i": 1
+	"birdroom_3i": 1,
+	"study_1": 1,
+	"outlet_1a": 1
 	
 }
 

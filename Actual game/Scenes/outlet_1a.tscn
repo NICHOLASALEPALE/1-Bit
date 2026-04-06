@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b5w6dwu4c37ay"]
 
 [ext_resource type="Texture2D" uid="uid://dgatgd26gyino" path="res://Actual game/Assets/statueroom1a_bg.png" id="1_2j5ad"]
+[ext_resource type="Script" uid="uid://djswjo5v7is3p" path="res://Actual game/Scripts/outlet_1a.gd" id="1_danro"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_38dm3"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_38dm3"]
+[ext_resource type="Script" uid="uid://p7pukd430ss0" path="res://Actual game/Scripts/statues.gd" id="4_gjmpb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjmpb"]
 size = Vector2(1443, 29)
@@ -16,7 +18,14 @@ size = Vector2(111, 409.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs5e6"]
 size = Vector2(99, 170)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbhgq"]
+size = Vector2(259, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnifl"]
+size = Vector2(56, 225)
+
 [node name="outlet_1a" type="Node2D" unique_id=720345939]
+script = ExtResource("1_danro")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=6079524]
 position = Vector2(268, 218)
@@ -33,14 +42,14 @@ shape = SubResource("RectangleShape2D_gjmpb")
 position = Vector2(-283, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=605836759]
-position = Vector2(881, -93)
+position = Vector2(847, -93)
 shape = SubResource("RectangleShape2D_danro")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=511300821]
 position = Vector2(-283, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=488375223]
-position = Vector2(229, -98)
+position = Vector2(253, -100)
 shape = SubResource("RectangleShape2D_okjlt")
 
 [node name="door_outlet_1a_study_1" type="Area2D" parent="." unique_id=739605431 groups=["Door"]]
@@ -62,5 +71,48 @@ zoom = Vector2(2.4, 1.5)
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_38dm3")]
 position = Vector2(363, -294)
 
+[node name="AmimatedSprite2D" parent="Dwight" index="0" unique_id=1387078225]
+position = Vector2(1, -7.5)
+
+[node name="CollisionShape2D" parent="Dwight" index="1" unique_id=1377059615]
+position = Vector2(-0.5, -6.5)
+
+[node name="Statues" type="Area2D" parent="." unique_id=116377544]
+position = Vector2(931, 325)
+script = ExtResource("4_gjmpb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statues" unique_id=772926488]
+position = Vector2(-691.5, -38.5)
+shape = SubResource("RectangleShape2D_rbhgq")
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=1287895980]
+one_shot = true
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=723766148]
+offset_left = 75.0
+offset_top = 374.0
+offset_right = 408.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 25
+
+[node name="door_outlet1a_hall 1b" type="Area2D" parent="." unique_id=18118572 groups=["Door"]]
+z_index = 4
+position = Vector2(81, 272)
+script = ExtResource("2_38dm3")
+Scene = "uid://hwjdlb81qeql"
+Door_Name = "door_hall 1b_outlet1a"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_outlet1a_hall 1b" unique_id=1861598324]
+z_index = 4
+position = Vector2(-58, -2)
+shape = SubResource("RectangleShape2D_gnifl")
+
 [connection signal="body_entered" from="door_outlet_1a_study_1" to="door_outlet_1a_study_1" method="_on_body_entered"]
 [connection signal="body_exited" from="door_outlet_1a_study_1" to="door_outlet_1a_study_1" method="_on_body_exited"]
+[connection signal="body_entered" from="Statues" to="Statues" method="_on_body_entered"]
+[connection signal="body_exited" from="Statues" to="Statues" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight" method="_on_hide_text_timer_timeout"]
+[connection signal="body_entered" from="door_outlet1a_hall 1b" to="door_outlet1a_hall 1b" method="_on_body_entered"]
+[connection signal="body_exited" from="door_outlet1a_hall 1b" to="door_outlet1a_hall 1b" method="_on_body_exited"]
+
+[editable path="Dwight"]

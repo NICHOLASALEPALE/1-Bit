@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dcq1oskyn3ttu" path="res://Actual game/Scripts/library_3c.gd" id="1_nwv36"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_nwv36"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_p88re"]
+[ext_resource type="Script" uid="uid://d0gvgmn84xo4c" path="res://Actual game/Scripts/kitty.gd" id="5_p88re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sbggg"]
 size = Vector2(1443, 29)
@@ -16,6 +17,9 @@ size = Vector2(111, 409.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy5sv"]
 size = Vector2(99, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a24n3"]
+size = Vector2(195, 95)
 
 [node name="library_3c" type="Node2D" unique_id=397447914]
 script = ExtResource("1_nwv36")
@@ -76,7 +80,28 @@ position = Vector2(392, -201)
 position = Vector2(268, 218)
 zoom = Vector2(2.4, 1.5)
 
+[node name="Tree" type="Area2D" parent="." unique_id=370062792]
+position = Vector2(931, 325)
+script = ExtResource("5_p88re")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree" unique_id=798046630]
+position = Vector2(-712.5, -38.5)
+shape = SubResource("RectangleShape2D_a24n3")
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=1977071716]
+one_shot = true
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=1745742078]
+offset_left = 345.0
+offset_top = 15.0
+offset_right = 504.0
+offset_bottom = 159.0
+theme_override_font_sizes/font_size = 20
+
 [connection signal="body_entered" from="door_library3c_livingroom3b" to="door_library3c_livingroom3b" method="_on_body_entered"]
 [connection signal="body_exited" from="door_library3c_livingroom3b" to="door_library3c_livingroom3b" method="_on_body_exited"]
 [connection signal="body_entered" from="door_library3c_birdroom3i" to="door_library3c_birdroom3i" method="_on_body_entered"]
 [connection signal="body_exited" from="door_library3c_birdroom3i" to="door_library3c_birdroom3i" method="_on_body_exited"]
+[connection signal="body_entered" from="Tree" to="Tree" method="_on_body_entered"]
+[connection signal="body_exited" from="Tree" to="Tree" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight" method="_on_hide_text_timer_timeout"]
