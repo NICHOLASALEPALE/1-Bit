@@ -9,7 +9,7 @@
 size = Vector2(88, 525.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mo2x"]
-size = Vector2(103.890625, 185.875)
+size = Vector2(72, 185.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydu8y"]
 size = Vector2(1443, 29)
@@ -47,7 +47,7 @@ shape = SubResource("RectangleShape2D_mjk4m")
 
 [node name="door_bedrom1h_secretbath1j" type="Area2D" parent="." unique_id=527053782 groups=["Door"]]
 z_index = 4
-position = Vector2(344, 255)
+position = Vector2(339, 257)
 script = ExtResource("3_mqlj7")
 Scene = "uid://d26f77abvp43j"
 Door_Name = "door_secretbath1j_bedroom1h"
@@ -59,7 +59,7 @@ shape = SubResource("RectangleShape2D_5mo2x")
 
 [node name="door_bedroom1h_bedroom1i" type="Area2D" parent="." unique_id=1890926572 groups=["Door"]]
 z_index = 4
-position = Vector2(101, 278)
+position = Vector2(87, 259)
 script = ExtResource("3_mqlj7")
 Scene = "uid://cu5mrdysj7wau"
 Door_Name = "door_bedroom1i_bedroom1h"
@@ -71,7 +71,7 @@ shape = SubResource("RectangleShape2D_5mo2x")
 
 [node name="door_bedroom1h_bedroom1g" type="Area2D" parent="." unique_id=508552821 groups=["Door"]]
 z_index = 4
-position = Vector2(462, 264)
+position = Vector2(450, 262)
 script = ExtResource("3_mqlj7")
 Scene = "uid://c2wj7l6owgxqk"
 Door_Name = "door_bedroom1g_bedroom 1h"

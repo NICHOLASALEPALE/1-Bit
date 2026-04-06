@@ -83,7 +83,7 @@ position = Vector2(268, 218)
 zoom = Vector2(2.4, 1.5)
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_aqxws")]
-position = Vector2(241, 303)
+position = Vector2(280, -203)
 
 [node name="AmimatedSprite2D" parent="Dwight" index="0" unique_id=1387078225]
 position = Vector2(4, -5.5)

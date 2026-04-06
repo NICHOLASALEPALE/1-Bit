@@ -2,7 +2,7 @@ extends Node2D
 
 @export var room_tag: String = "room_2a"
 @export var monster_spawn_position: Vector2 = Vector2(25, 300)
-@export var monster_despawn_time: float = 3.0
+@export var monster_despawn_time: float = 2.5
 
 var monster_scene = preload("res://Testing Scenes/Scenes/monster.tscn")
 var monster: Node = null

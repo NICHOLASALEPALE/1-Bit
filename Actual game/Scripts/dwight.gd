@@ -35,9 +35,11 @@ func _physics_process(delta: float) -> void:
 		await get_tree().create_timer(0.3).timeout
 		toggle_hide()
 		
+
 	if Input.is_action_just_pressed("ui_select") and  is_hiding:
 		await get_tree().create_timer(0.3).timeout
 		toggle_hide()
+		GameManager.add_turn()
 
 	if is_hiding:
 		velocity = Vector2.ZERO
