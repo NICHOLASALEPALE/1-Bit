@@ -19,7 +19,7 @@ size = Vector2(111, 409.25)
 size = Vector2(99, 170)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbhgq"]
-size = Vector2(259, 95)
+size = Vector2(203, 95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnifl"]
 size = Vector2(56, 225)
@@ -82,7 +82,7 @@ position = Vector2(931, 325)
 script = ExtResource("4_gjmpb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Statues" unique_id=772926488]
-position = Vector2(-691.5, -38.5)
+position = Vector2(-694.5, -38.5)
 shape = SubResource("RectangleShape2D_rbhgq")
 
 [node name="HideTextTimer" type="Timer" parent="." unique_id=1287895980]

@@ -9,7 +9,7 @@ var enemy_progress: int = 0
 
 
 var player_current_room: String = "entrance"
-var enemy_current_room: String = "room_2a"
+var enemy_current_room: String = "outlet_1a"
 var death:bool = false
 
 var has_key: bool = false

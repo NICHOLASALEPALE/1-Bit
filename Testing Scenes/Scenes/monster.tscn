@@ -93,7 +93,7 @@ size = Vector2(262, 194)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwf77"]
 radius = 96.0
-height = 270.0
+height = 650.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=874148842]
 script = ExtResource("1_g0mdy")
@@ -121,7 +121,7 @@ shape = SubResource("RectangleShape2D_dfc53")
 script = ExtResource("14_7d6kb")
 
 [node name="vision cls" type="CollisionShape2D" parent="vision" unique_id=2019382834]
-position = Vector2(211, -7)
+position = Vector2(2, -1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pwf77")
 

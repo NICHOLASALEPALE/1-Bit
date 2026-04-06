@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 		return
 
 	if player_in_range != null and Input.is_action_just_pressed("ui_select"):
-		if GameManager.key_taken:
+		if GameManager.bird_freed == true:
 			music_manager.stop_music()
 			get_tree().change_scene_to_file("res://Actual game/Scenes/ending.tscn")
 

@@ -24,5 +24,7 @@ func _process(delta: float) -> void:
 			player_in_range.show_interact_text("Be free.")
 			audio_stream_player.play()
 			GameManager.bird_freed = true
+			
+	if GameManager.bird_freed == true:
 			bird_free.z_index = -3
 			#background.texture = bg_freed

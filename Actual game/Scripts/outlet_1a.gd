@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var room_tag: String = "outlet_1a"
-@export var monster_spawn_position: Vector2 = Vector2(25, 300)
+@export var monster_spawn_position: Vector2 = Vector2(400, 300)
 @export var monster_despawn_time: float = 6.0
 
 var monster_scene = preload("res://Testing Scenes/Scenes/monster.tscn")
@@ -15,7 +15,7 @@ func _ready() -> void:
 	GameManager.player_current_room = room_tag
 	music_manager.update_music_for_current_scene()
 
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	print("player in " + GameManager.player_current_room)
 
 	if GameManager.enemy_is_in_player_room():
