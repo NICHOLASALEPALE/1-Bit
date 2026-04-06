@@ -4,6 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cteu7bmarpe7l" path="res://Actual game/Assets/Birdroom3i_bg.png" id="1_dvoyw"]
 [ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_2ebbx"]
 [ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_utkf0"]
+[ext_resource type="Script" uid="uid://cmst86f3o12ym" path="res://Actual game/Scripts/key_interact.gd" id="5_2384s"]
+[ext_resource type="Texture2D" uid="uid://byl63negx6ll5" path="res://Actual game/Assets/THE_KEY-sheet.png" id="5_utkf0"]
+[ext_resource type="Texture2D" uid="uid://br1mty8usabet" path="res://Actual game/Assets/THE_BREAD-sheet.png" id="6_vbifc"]
+[ext_resource type="Script" uid="uid://b06utxwsmme2t" path="res://Actual game/Scripts/bread_interact.gd" id="7_336lp"]
+[ext_resource type="Script" uid="uid://d8fr8ergj2wu" path="res://Actual game/Scripts/cage_interact.gd" id="9_yo8al"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8kp0"]
 size = Vector2(93, 416.25)
@@ -16,6 +21,59 @@ size = Vector2(106, 226)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvoyw"]
 size = Vector2(1443, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbifc"]
+atlas = ExtResource("5_utkf0")
+region = Rect2(320, 0, 320, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2384s"]
+atlas = ExtResource("5_utkf0")
+region = Rect2(0, 0, 320, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_336lp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbifc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2384s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yo8al"]
+size = Vector2(41, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2384s"]
+size = Vector2(62, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_336lp"]
+atlas = ExtResource("6_vbifc")
+region = Rect2(0, 0, 320, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo8al"]
+atlas = ExtResource("6_vbifc")
+region = Rect2(320, 0, 320, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6td54"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_336lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo8al")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6td54"]
+size = Vector2(294, 202)
 
 [node name="birdroom_3i" type="Node2D" unique_id=1964630806]
 script = ExtResource("1_2ebbx")
@@ -52,6 +110,7 @@ position = Vector2(-96, -158)
 shape = SubResource("RectangleShape2D_jy5sv")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_utkf0")]
+z_index = 3
 position = Vector2(203, -110)
 
 [node name="Sprite2D" parent="Dwight" index="0" unique_id=886479001]
@@ -70,10 +129,58 @@ limit_bottom = 425
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=394384719]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2078227601]
-position = Vector2(716.5, 418.5)
+position = Vector2(721, 442)
 shape = SubResource("RectangleShape2D_dvoyw")
+
+[node name="Key Interact" type="Area2D" parent="." unique_id=1130657014]
+position = Vector2(537, 278)
+script = ExtResource("5_2384s")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Key Interact" unique_id=1258254215]
+sprite_frames = SubResource("SpriteFrames_336lp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key Interact" unique_id=1639250466]
+position = Vector2(7.5, -21)
+shape = SubResource("RectangleShape2D_yo8al")
+
+[node name="Bread Interact" type="Area2D" parent="." unique_id=518188310]
+position = Vector2(483, 277)
+script = ExtResource("7_336lp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bread Interact" unique_id=2071698301]
+position = Vector2(-54, -17.5)
+shape = SubResource("RectangleShape2D_2384s")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Bread Interact" unique_id=1831213158]
+sprite_frames = SubResource("SpriteFrames_6td54")
+
+[node name="Cage Interact" type="Area2D" parent="." unique_id=1403084043]
+position = Vector2(777, 292)
+script = ExtResource("9_yo8al")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cage Interact" unique_id=1412628716]
+position = Vector2(6, 0)
+shape = SubResource("RectangleShape2D_6td54")
+
+[node name="HideTextLabel" type="Label" parent="." unique_id=1331551591]
+visible = false
+offset_left = 345.0
+offset_top = 167.0
+offset_right = 614.0
+offset_bottom = 277.0
+theme_override_font_sizes/font_size = 25
+
+[node name="HideTextTimer" type="Timer" parent="." unique_id=349460666]
+one_shot = true
 
 [connection signal="body_entered" from="door_birdroom3i_library3c" to="door_birdroom3i_library3c" method="_on_body_entered"]
 [connection signal="body_exited" from="door_birdroom3i_library3c" to="door_birdroom3i_library3c" method="_on_body_exited"]
+[connection signal="body_entered" from="Key Interact" to="Key Interact" method="_on_body_entered"]
+[connection signal="body_exited" from="Key Interact" to="Key Interact" method="_on_body_exited"]
+[connection signal="body_entered" from="Bread Interact" to="Bread Interact" method="_on_body_entered"]
+[connection signal="body_exited" from="Bread Interact" to="Bread Interact" method="_on_body_exited"]
+[connection signal="body_entered" from="Cage Interact" to="Cage Interact" method="_on_body_entered"]
+[connection signal="body_exited" from="Cage Interact" to="Cage Interact" method="_on_body_exited"]
+[connection signal="timeout" from="HideTextTimer" to="Dwight" method="_on_hide_text_timer_timeout"]
 
 [editable path="Dwight"]

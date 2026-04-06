@@ -3,9 +3,13 @@ extends Node2D
 @export var room_tag: String = "birdroom_3i"
 @export var monster_spawn_position: Vector2 = Vector2(25, 300)
 @export var monster_despawn_time: float = 10.0
+@onready var background: Sprite2D = $Background
 
 var monster_scene = preload("res://Testing Scenes/Scenes/monster.tscn")
 var monster: Node = null
+
+#var bg_locked = preload("res://path_to/birdroom3i_bg.png")
+#var bg_freed = preload("res://path_to/birdroom3i_bg2.png")
 
 func _ready() -> void:
 	print("Room script running in:", name)
@@ -30,3 +34,10 @@ func _ready() -> void:
 			monster.queue_free()
 			monster = null
 			print("enemy despawned")
+			
+	if GameManager.bird_freed:
+		#background.texture = bg_freed
+		pass
+	else:
+		#background.texture = bg_locked
+		pass

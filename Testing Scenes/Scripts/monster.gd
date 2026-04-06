@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 400.0
+@export var speed: float = 250.0
 @export var walk_speed: float = 175.0
 @export var move_direction: int = 1
 
@@ -18,6 +18,8 @@ func _ready() -> void:
 	heartbeat_sound_player.volume_db = 10
 	heartbeat_sound_player.finished.connect(_on_heartbeat_finished)
 	add_child(heartbeat_sound_player)
+	
+
 
 func start_walking() -> void:
 	is_active = true
@@ -30,6 +32,7 @@ func start_chasing(target: Node2D) -> void:
 	player = target
 	chasing = true
 	is_active = true
+
 	
 	if heartbeat_sound_player and not heartbeat_sound_player.playing:
 		heartbeat_sound_player.play()

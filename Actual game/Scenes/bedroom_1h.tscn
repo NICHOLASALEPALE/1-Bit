@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://d0q0dhsntlmuv"]
+
+[ext_resource type="Texture2D" uid="uid://du02450t4ufy0" path="res://Actual game/Assets/Bed1h_bg.png" id="1_16335"]
+[ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="2_2pptj"]
+[ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="3_mqlj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjk4m"]
+size = Vector2(88, 525.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mo2x"]
+size = Vector2(219.78125, 237.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x43gg"]
+size = Vector2(1443, 29)
+
+[node name="bedroom_1h" type="Node2D" unique_id=1096043910]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1815031849]
+position = Vector2(588, 324)
+scale = Vector2(7.075, 4.3055553)
+texture = ExtResource("1_16335")
+
+[node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("2_2pptj")]
+position = Vector2(347, 181)
+
+[node name="Sprite2D" parent="Dwight" index="0" unique_id=886479001]
+position = Vector2(80, 14)
+
+[node name="CollisionShape2D" parent="Dwight" index="1" unique_id=1377059615]
+position = Vector2(1, -7)
+
+[node name="Camera2D" type="Camera2D" parent="Dwight" unique_id=940209019]
+zoom = Vector2(2.4, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 960
+limit_bottom = 425
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=165437433]
+position = Vector2(-344, 556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=625198216]
+position = Vector2(1517, -331)
+shape = SubResource("RectangleShape2D_mjk4m")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=2044402676]
+position = Vector2(-283, 296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1926170831]
+position = Vector2(215, -102)
+shape = SubResource("RectangleShape2D_mjk4m")
+
+[node name="door_bedrom1h_secretbath1j" type="Area2D" parent="." unique_id=527053782 groups=["Door"]]
+z_index = 4
+position = Vector2(613, 439)
+script = ExtResource("3_mqlj7")
+Scene = "uid://dnbvi8y3khao2"
+Door_Name = "door_secretbath1j_bedroom1h"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedrom1h_secretbath1j" unique_id=1257645887]
+z_index = 4
+position = Vector2(140.40625, -62.25)
+shape = SubResource("RectangleShape2D_5mo2x")
+
+[node name="door_bedroom1h_bedroom1i" type="Area2D" parent="." unique_id=1890926572 groups=["Door"]]
+z_index = 4
+position = Vector2(1061, 450)
+script = ExtResource("3_mqlj7")
+Scene = "uid://cxk2aw0ph8rvk"
+Door_Name = "door_bedroom1i_bedroom1h"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedroom1h_bedroom1i" unique_id=1550894472]
+z_index = 4
+position = Vector2(150, -56)
+shape = SubResource("RectangleShape2D_5mo2x")
+
+[node name="door_bedroom1h_bedroom1g" type="Area2D" parent="." unique_id=508552821 groups=["Door"]]
+z_index = 4
+position = Vector2(85, 259)
+script = ExtResource("3_mqlj7")
+Scene = "uid://bn2pyp61ig5y1"
+Door_Name = "door_bedroom1g_bedroom 1h"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_bedroom1h_bedroom1g" unique_id=885158535]
+z_index = 4
+position = Vector2(55.109375, 116.125)
+shape = SubResource("RectangleShape2D_5mo2x")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1662005906]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1852933574]
+position = Vector2(653, 541)
+shape = SubResource("RectangleShape2D_x43gg")
+
+[connection signal="body_entered" from="door_bedrom1h_secretbath1j" to="door_bedrom1h_secretbath1j" method="_on_body_entered"]
+[connection signal="body_exited" from="door_bedrom1h_secretbath1j" to="door_bedrom1h_secretbath1j" method="_on_body_exited"]
+[connection signal="body_entered" from="door_bedroom1h_bedroom1i" to="door_bedroom1h_bedroom1i" method="_on_body_entered"]
+[connection signal="body_exited" from="door_bedroom1h_bedroom1i" to="door_bedroom1h_bedroom1i" method="_on_body_exited"]
+[connection signal="body_entered" from="door_bedroom1h_bedroom1g" to="door_bedroom1h_bedroom1g" method="_on_body_entered"]
+[connection signal="body_exited" from="door_bedroom1h_bedroom1g" to="door_bedroom1h_bedroom1g" method="_on_body_exited"]
+
+[editable path="Dwight"]

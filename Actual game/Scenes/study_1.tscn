@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dg5sen75ohieu"]
+
+[ext_resource type="Texture2D" uid="uid://ccajbjeecc0l3" path="res://Actual game/Assets/study1_bg.png" id="1_xonsm"]
+[ext_resource type="Script" uid="uid://nmlje1luikt8" path="res://Actual game/Scripts/door_2_2a.gd" id="2_6yhh0"]
+[ext_resource type="PackedScene" uid="uid://thb60q24cqg7" path="res://Actual game/Scenes/dwight.tscn" id="3_ickr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvfwb"]
+size = Vector2(87, 186)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivi21"]
+size = Vector2(1443, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_getee"]
+size = Vector2(157, 279)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ar6p5"]
+size = Vector2(206, 225)
+
+[node name="study_1" type="Node2D" unique_id=1244123192]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=666733559]
+position = Vector2(583, 324)
+scale = Vector2(7.0375, 4.2777777)
+texture = ExtResource("1_xonsm")
+
+[node name="door_study 1_entrance 1" type="Area2D" parent="." unique_id=877767920 groups=["Door"]]
+z_index = 4
+position = Vector2(101, 491)
+script = ExtResource("2_6yhh0")
+Scene = "uid://bal7c60ujqqby"
+Door_Name = "door_2_E"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_study 1_entrance 1" unique_id=1539883370]
+z_index = 4
+position = Vector2(-58, -50)
+shape = SubResource("RectangleShape2D_kvfwb")
+
+[node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_ickr5")]
+position = Vector2(219, -302)
+
+[node name="Sprite2D" parent="Dwight" index="0" unique_id=886479001]
+position = Vector2(152, 532)
+
+[node name="CollisionShape2D" parent="Dwight" index="1" unique_id=1377059615]
+position = Vector2(81, 487)
+
+[node name="Camera2D2" type="Camera2D" parent="Dwight" unique_id=1158886138]
+position = Vector2(-75, -105)
+zoom = Vector2(2.4, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 1440
+limit_bottom = 425
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=222119043]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2028346806]
+position = Vector2(622, 551)
+shape = SubResource("RectangleShape2D_ivi21")
+
+[node name="Area2D2" type="StaticBody2D" parent="." unique_id=2040926947]
+position = Vector2(-122, -194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1298162375]
+position = Vector2(1310, 602)
+shape = SubResource("RectangleShape2D_getee")
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=546281292]
+position = Vector2(-61, -97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2093645235]
+position = Vector2(35, 546)
+shape = SubResource("RectangleShape2D_getee")
+
+[node name="door_study1_outlet1a" type="Area2D" parent="." unique_id=776216919 groups=["Door"]]
+z_index = 4
+position = Vector2(836, 400)
+script = ExtResource("2_6yhh0")
+Scene = "uid://bbyxfek0kchsf"
+Door_Name = "door_nest3a_hall3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_study1_outlet1a" unique_id=923767372]
+z_index = 4
+position = Vector2(129, -26.5)
+shape = SubResource("RectangleShape2D_ar6p5")
+
+[connection signal="body_entered" from="door_study 1_entrance 1" to="door_study 1_entrance 1" method="_on_body_entered"]
+[connection signal="body_exited" from="door_study 1_entrance 1" to="door_study 1_entrance 1" method="_on_body_exited"]
+[connection signal="body_entered" from="door_study1_outlet1a" to="door_study1_outlet1a" method="_on_body_entered"]
+[connection signal="body_exited" from="door_study1_outlet1a" to="door_study1_outlet1a" method="_on_body_exited"]
+
+[editable path="Dwight"]

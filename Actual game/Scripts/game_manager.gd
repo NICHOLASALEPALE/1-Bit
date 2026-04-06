@@ -5,10 +5,18 @@ var turns: int = 0
 var enemy_progress: int = 0
 
 @onready var score_label: Label = $"score label"
+#@onready var item_text: Label = $ItemText
+
 
 var player_current_room: String = "room_2"
 var enemy_current_room: String = "room_2"
 var death:bool = false
+
+var has_key: bool = false
+var bird_freed: bool = false
+var key_taken: bool = false
+var bread_taken: bool = false
+var chosen: bool = false
 
 var room_order: Array[String] = [
 	"room_2",
@@ -32,8 +40,13 @@ var room_costs := {
 	"birdroom_3i": 1
 }
 
+var message_queue: Array[String] = []
+var showing_message: bool = false
+
 func _ready() -> void:
 	update_score_label()
+	#if item_text:
+		#item_text.visible = false
 
 func update_score_label() -> void:
 	pass
@@ -96,3 +109,24 @@ func update_enemy_position() -> void:
 func enemy_is_in_player_room() -> bool:
 	print("GameManager check returning: ", enemy_is_in_player_room)
 	return enemy_current_room == player_current_room
+	
+#func show_item_text(message: String, duration: float = 2.0) -> void:
+	#message_queue.append(message)
+
+	#if not showing_message:
+		#process_message_queue(duration)
+
+#func process_message_queue(duration: float) -> void:
+	#showing_message = true
+
+#	while message_queue.size() > 0:
+		#var next_message = message_queue.pop_front()
+		#item_text.text = next_message
+		#item_text.visible = true
+
+		#await get_tree().create_timer(duration).timeout
+
+		#item_text.visible = false
+		#await get_tree().create_timer(0.2).timeout
+
+	#showing_message = false

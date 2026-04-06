@@ -110,6 +110,7 @@ shape = SubResource("RectangleShape2D_ra754")
 one_shot = true
 
 [node name="HideTextLabel" type="Label" parent="." unique_id=1094261575]
+visible = false
 offset_left = 355.0
 offset_top = 352.0
 offset_right = 710.0

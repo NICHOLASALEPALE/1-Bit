@@ -11,11 +11,20 @@ var is_hiding: bool = false
 var can_hide: bool = false
 var hide_position: Vector2
 var current_hide_message: String = ""
+var bread_key_message: String = ""
+var chosen: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var hide_text_label: Label = $"../HideTextLabel"
 @onready var hide_text_timer: Timer = $"../HideTextTimer"
+@onready var interact_text_label: Label = $"../HideTextLabel"
+@onready var interact_text_timer: Timer = $"../HideTextTimer"
+
+@onready var item_text = $CanvasLayer/ItemText
+
+var message_queue: Array[String] = []
+var showing_message: bool = false
 
 
 
@@ -62,6 +71,11 @@ func toggle_hide() -> void:
 		sprite.visible = true
 		collision.disabled = false
 
+func has_chosen() -> void:
+	if chosen == true:
+		show_hide_text(current_hide_message)
+		print("workiing")
+
 func show_hide_text(message: String) -> void:
 	if hide_text_label == null:
 		return
@@ -76,9 +90,43 @@ func show_hide_text(message: String) -> void:
 	if hide_text_timer:
 		hide_text_timer.start()
 
+func show_interact_text(message: String) -> void:
+	if interact_text_label == null:
+		return
+
+	interact_text_label.text = ""
+	interact_text_label.visible = true
+
+	for i in message.length():
+		interact_text_label.text += message[i]
+		await get_tree().create_timer(0.03).timeout
+
+	interact_text_timer.start()
+
+
 func _on_hide_text_timer_timeout() -> void:
 	hide_text_label.visible = false
+	interact_text_label.visible = false
 
 
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
+	
+func show_item_text(message: String, duration: float = 2.0) -> void:
+	message_queue.append(message)
+	if not showing_message:
+		process_queue(duration)
+
+func process_queue(duration: float) -> void:
+	showing_message = true
+
+	while message_queue.size() > 0:
+		item_text.text = message_queue.pop_front()
+		item_text.visible = true
+		
+		await get_tree().create_timer(duration).timeout
+		
+		item_text.visible = false
+		await get_tree().create_timer(0.2).timeout
+
+	showing_message = false
