@@ -27,7 +27,8 @@ func _process(_delta: float) -> void:
 			var player := player_in_range
 
 			if player != null and is_instance_valid(player):
-				player.show_interact_text("I can't jump from here alone.")
+				player.show_interact_text("I can't jump from 
+				here alone.")
 
 			await get_tree().create_timer(3.0).timeout
 

@@ -68,7 +68,7 @@ position = Vector2(12, 1)
 shape = SubResource("RectangleShape2D_ar6p5")
 
 [node name="Dwight" parent="." unique_id=1227741252 instance=ExtResource("3_eg4v2")]
-position = Vector2(443, -140)
+position = Vector2(542, -254)
 
 [node name="AmimatedSprite2D" parent="Dwight" index="0" unique_id=1387078225]
 position = Vector2(5, 0.5)
