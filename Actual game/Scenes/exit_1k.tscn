@@ -84,7 +84,7 @@ one_shot = true
 
 [node name="HideTextLabel" type="Label" parent="." unique_id=1277867682]
 offset_left = 90.0
-offset_top = 374.0
+offset_top = 391.0
 offset_right = 497.0
 offset_bottom = 426.0
 theme_override_font_sizes/font_size = 25

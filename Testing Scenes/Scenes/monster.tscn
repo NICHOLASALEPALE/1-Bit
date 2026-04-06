@@ -89,11 +89,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfc53"]
-size = Vector2(262, 194)
+size = Vector2(176, 194)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwf77"]
 radius = 96.0
-height = 650.0
+height = 516.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=874148842]
 script = ExtResource("1_g0mdy")

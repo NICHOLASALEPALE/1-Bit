@@ -12,6 +12,8 @@ var heartbeat_sound_player: AudioStreamPlayer
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+
+
 func _ready() -> void:
 	heartbeat_sound_player = AudioStreamPlayer.new()
 	heartbeat_sound_player.stream = preload("res://Actual game/Music/HeartbeatSFX.mp3")
@@ -40,6 +42,9 @@ func start_chasing(target: Node2D) -> void:
 func _physics_process(delta: float) -> void:
 	if not is_active:
 		return
+		
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 
 	if chasing and player != null:
 		var direction = (player.global_position - global_position).normalized()
